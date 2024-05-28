@@ -5,126 +5,138 @@
       "name": "Sony PlayStation 5",
       "brand": "Sonyz",
       "category": "phone",
-      "price": "4991",
+      "price": 4991,
       "description": "The PlayStation 55 is Sony's latest gaming console, offering cutting-edge graphics, lightning-fast load times, and immersive gaming experiences.",
       "imageFilename": "product6.jpg",
-      "createdAt": "2024/05/21",
-      "createAt": "2024/05/21"
+      "createdAt": "2024/05/21"
     },
     {
+      "id": 7,
       "name": "zzzaa",
       "brand": "zzz",
       "category": "Open this select menu",
-      "price": "2000",
+      "price": 2000,
       "description": "111",
       "imageFilename": "1716269753070-1716217488012-product1.jpg",
-      "createdAt": "2024-05-21T05:35:53.072Z",
-      "id": 7,
-      "createAt": "2024-05-21T05:35:53.072Z"
+      "createdAt": "2024-05-21T05:35:53.072Z"
     },
     {
+      "id": 8,
       "name": "sadasd",
       "brand": "111",
       "category": "laptop",
-      "price": "333",
+      "price": 333,
       "description": "111",
       "imageFilename": "1716388090592-1716217488012-product1.jpg",
-      "createdAt": "2024-05-22T14:28:10.599Z",
-      "id": 8
+      "createdAt": "2024-05-22T14:28:10.599Z"
     },
     {
+      "id": 9,
       "name": "dien thoai",
       "brand": "10",
       "category": "playstation",
-      "price": "20",
+      "price": 20,
       "description": "10",
       "imageFilename": "1716436162212-1716217488012-product1.jpg",
-      "createdAt": "2024-05-23T03:49:22.214Z",
-      "id": 9
+      "createdAt": "2024-05-23T03:49:22.214Z"
     },
     {
+      "id": 10,
       "name": "Sony 9182",
       "brand": "123123",
       "category": "laptop",
-      "price": "20",
+      "price": 20,
       "description": "01",
       "imageFilename": "1716436191988-1716217488012-product1.jpg",
-      "createdAt": "2024-05-23T03:49:51.989Z",
-      "id": 10
+      "createdAt": "2024-05-23T03:49:51.989Z"
     }
   ],
   "courses": [
     {
-      "id": 1,
-      "course_name": "Toiec 4 Kỹ Năng",
-      "course_description": "Bài thi Toeic 4 kỹ năng đánh giá trình độ sử dụng tiếng Anh trong môi trường giao tiếp và làm việc quốc tế",
-      "course_price": 1000,
-      "course_duration": 3,
-      "course_img": "toiec4KyNang.jpg",
-      "createdAt": "2024/05/20"
+      "id": 2,
+      "course_name": "IELTS Preparation Course",
+      "course_description": "j",
+      "course_price": "1200",
+      "course_duration": "6",
+      "course_img": "1716558916848-1716388547009-1716217983899-product1.jpg",
+      "createdAt": "2024-05-21",
+      "instructor": "John Doe",
+      "category": "Language",
+      "rating": 4.8,
+      "studentsEnrolled": 150
     },
     {
       "id": 3,
-      "course_name": "Business English Course",
-      "course_description": "Develop English language skills specifically for business communication and interactions.",
-      "course_price": 1500,
-      "course_duration": 8,
-      "course_img": "BusinessEnglishCourse.jpg",
-      "createdAt": "2024/05/21"
+      "course_name": "TOEFL Preparation Course",
+      "course_description": "Get ready for the TOEFL exam with in-depth lessons and practice exercises.",
+      "course_price": 1100,
+      "course_duration": 5,
+      "course_img": "IELTSPreparationCourse.jpg",
+      "createdAt": "2024-05-22",
+      "instructor": "Jane Smith",
+      "category": "Language",
+      "rating": 4.7,
+      "studentsEnrolled": 130
     },
     {
       "id": 4,
-      "course_name": "English Conversation Practice",
-      "course_description": "Enhance your speaking and listening skills through interactive conversation sessions.",
-      "course_price": 800,
+      "course_name": "Business English",
+      "course_description": "Improve your business English skills for the workplace.",
+      "course_price": 900,
       "course_duration": 4,
       "course_img": "EnglishConversationPractice.jpg",
-      "createdAt": "2024/05/21"
+      "createdAt": "2024-05-23",
+      "instructor": "Mark Johnson",
+      "category": "Language",
+      "rating": 4.6,
+      "studentsEnrolled": 170
     },
     {
-      "course_img": "1716469381364-1716217702076-product4.jpg",
-      "course_name": "luyen thi Ielts",
-      "course_price": "10",
-      "course_duration": "10",
-      "course_description": "vvvv",
-      "createdAt": "2024-05-23T13:03:01.366Z",
-      "id": 20
+      "id": 5,
+      "course_name": "Conversational English",
+      "course_description": "Enhance your English speaking skills through practical conversations.",
+      "course_price": 800,
+      "course_duration": 3,
+      "course_img": "toiec4KyNang.jpg",
+      "createdAt": "2024-05-24",
+      "instructor": "Emily Davis",
+      "category": "Language",
+      "rating": 4.5,
+      "studentsEnrolled": 190
+    },
+    {
+      "course_img": "1716903126996-1716388547009-1716217983899-product1.jpg",
+      "course_name": "n",
+      "course_price": "",
+      "course_duration": "",
+      "course_description": "n",
+      "createdAt": "2024-05-28T13:32:07.004Z",
+      "id": 6
+    },
+    {
+      "course_name": "-",
+      "course_price": "9",
+      "course_duration": "9",
+      "course_description": "",
+      "createdAt": "2024-05-28T13:38:29.495Z",
+      "id": 7
+    },
+    {
+      "course_img": "1716907378686-1716385756919-1716217983899-product1.jpg",
+      "course_name": "k",
+      "course_price": "",
+      "course_duration": "",
+      "course_description": "k ",
+      "createdAt": "2024-05-28T14:42:58.693Z",
+      "id": 8
     }
   ],
   "detailCourse": [
     {
-      "id": 1,
-      "course_id": 1,
-      "location": "Bình Thạnh",
-      "day": [
-        "Thứ 3",
-        "Thứ 5",
-        "Thứ 7"
-      ],
-      "start": "7h30",
-      "end": "9h"
-    },
-    {
-      "id": 2,
-      "course_id": 1,
-      "location": "Thủ Đức",
-      "day": [
-        "Thứ 2",
-        "Thứ 4",
-        "Thứ 6"
-      ],
-      "start": "7h30",
-      "end": "9h"
-    },
-    {
       "id": 3,
       "course_id": 2,
       "location": "Bình Thạnh",
-      "day": [
-        "Thứ 2",
-        "Thứ 6",
-        "Thứ 7"
-      ],
+      "day": "Thứ 2,Thứ 6,Thứ 7",
       "start": "6h",
       "end": "7h30"
     },
@@ -132,181 +144,105 @@
       "id": 4,
       "course_id": 2,
       "location": "Thủ Đức",
-      "day": [
-        "Thứ 3",
-        "Thứ 4",
-        "Thứ 7"
-      ],
+      "day": "Thứ 3, Thứ 4,Thứ 7",
       "start": "6h",
       "end": "7h30"
     },
     {
-      "id": 5,
-      "course_id": 5,
       "location": "Thủ Đức",
-      "day": [
-        "Thứ 3",
-        "Thứ 4",
-        "Thứ 7"
-      ],
-      "start": "6h",
-      "end": "7h30"
+      "start": "n",
+      "end": "n",
+      "day": "n,n,n",
+      "course_id": 6,
+      "id": 5
     },
     {
-      "location": "Tân Phú",
-      "start": "10",
-      "end": "12",
-      "course_id": "5",
+      "location": "Bình Thạnh",
+      "start": "n",
+      "end": "n",
+      "day": "n,n,n",
+      "course_id": 6,
       "id": 6
     },
     {
-      "location": "Binh Thanh",
-      "start": "10",
-      "end": "10",
-      "course_id": 5,
+      "location": "Thủ Đức",
+      "start": "m",
+      "end": "-",
+      "day": "-,-,-",
+      "course_id": 7,
       "id": 7
     },
     {
-      "location": "tan phu ",
-      "start": "10",
-      "end": "20",
-      "course_id": 5,
+      "location": "Bình Thạnh",
+      "start": "-",
+      "end": "k",
+      "day": "-,-,-",
+      "course_id": 7,
       "id": 8
     },
     {
-      "location": "Tan Binh",
-      "start": "11",
-      "end": "2",
-      "course_id": 5,
+      "location": "Thủ Đức",
+      "start": "k",
+      "end": "k",
+      "day": "k,k,k",
+      "course_id": 8,
       "id": 9
     },
     {
+      "location": "Bình Thạnh",
+      "start": "k",
+      "end": "k",
+      "day": "k,k,k",
+      "course_id": 8,
       "id": 10
+    }
+  ],
+  "locationCourse": [
+    {
+      "id": 1,
+      "locationName": "Thủ Đức",
+      "course_id": 1
     },
     {
-      "id": 11
+      "id": 2,
+      "locationName": "Bình Thạnh",
+      "course_id": 1
+    }
+  ],
+  "admin": [
+    {
+      "id": 1,
+      "admin_name": "Nguyễn Thành Đạt",
+      "password": 123,
+      "email": "nnguyendat72@gmail.com"
     },
     {
-      "id": 12
+      "id": 2,
+      "admin_name": "Nguyễn Minh Hiệp",
+      "password": 123,
+      "email": "minhhiep325@gmail.com"
     },
     {
-      "id": 13
+      "name": "Nguyen Duc Toan",
+      "email": "nhoctoan6666@gmail.com",
+      "password": 123,
+      "id": 3
+    }
+  ],
+  "lecturers": [
+    {
+      "id": 1,
+      "lecturer_img": "tom.jpg",
+      "lecturer_name": "MR.Hóa Lộc",
+      "lecturer_certificate": "Thạc sỹ Ngôn Ngữ Anh , IELTS Reading 8.5 & Writing 7.0 , Kinh nghiệm 09 năm luyện thi các chứng chỉ",
+      "lecturer_description": "“Là thủ khoa Cử nhân Luật &amp; thủ khoa Thạc sỹ Ngôn ngữ Anh, tôi hiểu những khó khăn của người học tiếng Anh và biết cách để giúp người học yêu ngôn ngữ này. Bằng kiến thức, kỹ năng, và kinh nghiệm của mình, tôi hy vọng có thể giúp các bạn vượt qua nỗi lo lắng về “anh chàng” Tiếng Anh này. Tiếng Anh không khó, hãy tìm hiểu và nỗ lực, bạn sẽ “chinh phục” được!”"
     },
     {
-      "id": 14
-    },
-    {
-      "location": "zzz",
-      "start": "10",
-      "end": "12",
-      "course_id": 5,
-      "id": 15
-    },
-    {
-      "id": 16
-    },
-    {
-      "course_id": "5",
-      "location": "222",
-      "start": "22",
-      "end": "22",
-      "id": 17
-    },
-    {
-      "id": 18
-    },
-    {
-      "id": 19
-    },
-    {
-      "location": "cccc",
-      "start": "10",
-      "end": "10",
-      "course_id": 5,
-      "id": 20
-    },
-    {
-      "img": {},
-      "course_id": 5,
-      "location": "hai mot",
-      "start": "21",
-      "end": "21",
-      "id": 21
-    },
-    {
-      "img": {},
-      "course_id": 5,
-      "location": "muoi",
-      "start": "10",
-      "end": "10",
-      "id": 22
-    },
-    {
-      "img": {},
-      "course_id": null,
-      "location": "11",
-      "start": "11",
-      "end": "11",
-      "id": 23
-    },
-    {
-      "id": 24
-    },
-    {
-      "id": 25
-    },
-    {
-      "id": 26
-    },
-    {
-      "id": 27
-    },
-    {
-      "img": {},
-      "course_img": {},
-      "course_name": "kkk",
-      "course_price": "20",
-      "course_duration": "20",
-      "course_description": "kkkk ",
-      "course_id": "16",
-      "location": "kk",
-      "start": "10",
-      "end": "20",
-      "id": 28
-    },
-    {
-      "img": {},
-      "course_id": null,
-      "location": "jj",
-      "start": "40",
-      "end": "40",
-      "id": 29
-    },
-    {
-      "course_id": 18,
-      "location": "duoc",
-      "start": "10",
-      "end": "10",
-      "id": 30
-    },
-    {
-      "course_id": 19,
-      "location": "tay tang",
-      "start": "6h30",
-      "end": "8h",
-      "id": 31
-    },
-    {
-      "course_id": 20,
-      "location": "Thủ Đức",
-      "start": "6h30",
-      "end": "8h",
-      "day": [
-        "Thứ 2",
-        "Thứ 4",
-        "Thứ 6"
-      ],
-      "id": 32
+      "id": 2,
+      "lecturer_img": "arthur.jpg",
+      "lecturer_name": "MS.Thiên Trân",
+      "lecturer_certificate": ",,,",
+      "lecturer_description": "“Với kinh nghiệm 10 năm giảng dạy Tiếng Anh, kinh nghiệm luyện thi và niềm đam mê với sự nghiệp “truyền lửa” đến học viên nhiều lứa tuổi, tôi mong muốn giúp các bạn học viên vượt qua rào cản ngôn ngữ này bằng phương pháp học hiệu quả, luôn đổi mới với xu hướng hiện đại. Chưa cần các bạn giỏi, cần trước là sự cố gắng.”"
     }
   ]
 }

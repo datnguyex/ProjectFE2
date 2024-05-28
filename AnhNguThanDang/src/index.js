@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Footer, Navbar } from './components/layout';
 import { BrowserRouter,Routes,Route, } from 'react-router-dom';
 // import { ProductList } from './pages/admin/products/ProductList';
 import { CreateProduct } from './pages/admin/products/CreateProduct';
@@ -8,6 +7,13 @@ import { CreateProduct } from './pages/admin/products/CreateProduct';
 import { CourseList } from './pages/admin/courses/CourseList';
 import { CreateCourse } from './pages/admin/courses/CreateCourse';
 import { UpdateCourse } from './pages/admin/courses/UpdateCourse';
+import { Listlecturers } from './pages/admin/lecturers/Listlecturers';
+import { LecturerCreate } from './pages/admin/lecturers/LecturerCreate';
+import { LecturerUpdate } from './pages/admin/lecturers/LecturerUpdate';
+import {Navbar} from './pages/auth/navbarCourse';
+import Login from './pages/auth/login';
+import Register from './pages/auth/Register';
+
 //to="/Home" no se di chuyen den route va route se tra lai 1 component-> dia chi web cung thay doi
 // import component... tu file...
 
@@ -34,7 +40,7 @@ import { UpdateCourse } from './pages/admin/courses/UpdateCourse';
 
 // GET: Sử dụng để yêu cầu dữ liệu từ một nguồn nào đó. Thường được sử dụng để lấy dữ liệu từ máy chủ và hiển thị trên trình duyệt.
 
-// POST: Sử dụng để gửi dữ liệu từ client đến server để tạo mới một tài nguyên.
+// POST: Sử dụng để gửi dữ liệu từ client đến server để tạo mới một tài nguyên/de kiem tra.
 
 // PUT: Sử dụng để cập nhật toàn bộ thông tin của một tài nguyên hoặc tạo mới nếu tài nguyên không tồn tại.
 
@@ -55,13 +61,17 @@ function App() {
   return (  
     <div>
      <BrowserRouter>
-     <Navbar />
       <Routes>
+      <Route path='/auth/Register' element={<Register/>} /> 
+      <Route path='/auth/login' element={ <Login/>} /> 
       <Route path='/admin/courses' element={<CourseList />} /> 
       <Route path='/admin/courses/create' element={<CreateCourse />} />
       <Route path='/admin/courses/update/:id' element={<UpdateCourse />} />
+      <Route path='/admin/lecturers' element={<Listlecturers />} /> 
+      <Route path='/admin/lecturers/create' element={<LecturerCreate />} />
+      <Route path='/admin/lecturers/update/:id' element={<LecturerUpdate />} />
       {/* <Route path='/admin/products/create' element={<CreateProduct />} /> */}
-        {/*<Route path='/admin/products/edit/:id' element={<EditProduct />}/> */}
+      {/*<Route path='/admin/products/edit/:id' element={<EditProduct />}/> */}
       </Routes>
       
      </BrowserRouter>

@@ -3,11 +3,11 @@ import { Form, Link, useNavigate } from "react-router-dom";
 import "../../../css/courseList.scss"
 import "../../../css/base.css"
 import "../../../css/main.css"
-import "../../../css/profile.css"
 import "../../../css/seller.css"
+import "../../../css/profile.css"
 import "../../../css/product.css"
 import "../../../css/product_detail.css"
-
+import { Navbar } from "../../auth/navbarCourse";
 import { useEffect, useState } from "react";
 import axios from 'axios';
 //retuen chi dung de tra lai giao dien
@@ -22,26 +22,66 @@ export function CourseList() {
   const [courses, setCourses] = useState([]);
   const [detailCourses, setDetailCourses] = useState([]);
 
- 
+  const handleInputChange = (event) => {
+    const value = event.target.value;
+  
+  };
 
-  function deleteCourse(id) {
-    fetch("http://localhost:4000/Courses/" + id, {
-        method: "DELETE"
+  const handleSubmit = () => {
+    // Handle form submission
+  };
+
+  function getCourses() {
+    //phuong thuc get
+    fetch("http://localhost:4000/Courses")
+    .then(reponse => {
+      if(reponse.ok) {
+        return reponse.json();
+      }
     })
-    .then(response => {
-        if (response.ok) {
-         
-            return fetch("http://localhost:4000/Courses");
-        }
-    })
-    .then(response => response.json())
-    //lt do phai lam nhu nay => vi khong co ham getProduct de goi-> nen phai dung cach nay 
-    //de lay danh sach va gan vao state
     .then(data => {
-        // Update the courses state with the updated list
-        setCourses(data);
+       setCourses(data)
     })
-}
+  }
+  function getCourseDetail() {
+    //phuong thuc get
+    fetch("http://localhost:4000/detailCourse")
+    .then(reponse => {
+      if(reponse.ok) {
+        return reponse.json();
+      }
+    })
+    .then(data => {
+       setDetailCourses(data)
+    })
+  }
+
+
+  //1 so ham nhu delete/post khong can phai su dung repose.json -> vi chung ta quan tam 
+  //den viec may chu co thuc hien yeu cau them/xoa hay khong chu khong quan tam den viec
+  //may chu co phan hoi lai ket qua tra ve hay khong -> ham get quan tam den viec nhan lai
+  //ket qua tra ve nen phai repose.json
+  //noi chung khi can do du lieu xuong thi phai tra ve response
+  //co the tuong tuong response.json chuyen doi data thanh json cho de hieu
+  function deleteCourse(id) {
+    fetch(`http://localhost:4000/deleteCourseDetails?course_id=${id}`, {
+      method: "DELETE"
+    }).then(response => {
+      if (response.ok) {
+      
+        return fetch(`http://localhost:4000/Courses/${id}`, {
+          method: "DELETE"
+        }).then(response => {
+            if (response.ok) {
+            getCourses();
+            getCourseDetail();
+        } 
+     })
+      } 
+    })
+  }
+  
+  
 
  
 //vi cousrse detail da dươc lien ket voi course nen co the sap xep thong qua course
@@ -117,6 +157,9 @@ export function CourseList() {
         //lay ra phuong thuc get
         //dung de su dung ra phuong thuc get/post...
         //co the lay ra trong hook thay vi goi ham getCourses
+        ///axious co the lay du lieu truc tiep tu may chu (response.data)
+        //con fetch phai dung json de phan hoi yeu cau
+        //co the su dung fetch de nhan du lieu o day 
         axios.get('http://localhost:4000/Courses')
             .then(response => {
                 setCourses(response.data);
@@ -138,8 +181,9 @@ export function CourseList() {
     }));
 
     return (
-      
-    
+      <div>
+        {
+            
 <div class="app__container">
     <div class="grid">
         <div class="grid__row app__contents_seller ">
@@ -192,7 +236,7 @@ export function CourseList() {
                     </div>   
             
                     <button id="btnAddProject" name="" type="" class="home-filter__btn btn"><Link to="/admin/courses/create" class="seller__product-edit">Thêm</Link></button>
-                    <h3></h3>
+                    <button id="btnAddProject" name="" type="" class="home-filter__btn btn"><Link to="/admin/lecturers" class="seller__product-edit">Giảng Viên</Link></button>
                 </div>
 
                 <div class="home__product">
@@ -227,12 +271,12 @@ export function CourseList() {
                                           {detail.location}: {detail.day}  {detail.start} - {detail.end}
                                          </div>
                                          ))}
-                                            </td>
+                                    </td>
                                 
                                     <td class="action__product">
                                        
-                                         {/* <Link  to={`/admin/courses/update/${course.id}`} class="seller__product-edit">Cập nhật</Link>
-                                        <a href="" class="seller__product-detail">Xem thêm</a> */}
+                                          <Link  to={`/admin/courses/update/${course.id}`} class="seller__product-edit">Cập nhật</Link>
+                                        <a href="" class="seller__product-detail">Xem thêm</a> 
                                        
                                         
                                      <button onClick={() => deleteCourse(course.id)} id="delete_Product" type="submit">Xóa</button> 
@@ -248,5 +292,10 @@ export function CourseList() {
         </div>
     </div>
 </div>
+        }
+        <Navbar onInputChange={handleInputChange} onSubmit={handleSubmit} />
+      </div>
     );
-}
+  }
+
+ ;

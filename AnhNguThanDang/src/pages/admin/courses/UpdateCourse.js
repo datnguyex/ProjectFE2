@@ -15,6 +15,7 @@ const navigate = useNavigate();
 
 var param = useParams();
 var [course,setCourses] = useState({});
+var [detailCourse,setDetailCourse] = useState([]);
 
     function getCourses() {
         fetch("http://localhost:4000/Courses/"+param.id)
@@ -28,26 +29,74 @@ var [course,setCourses] = useState({});
         });
     }
 
-    function HandleSubmit(event) {
+    async function HandleSubmit(event) {
         event.preventDefault();
-        const formData = new FormData(event.target)
-        const course = Object.fromEntries(formData.entries())
-        fetch("http://localhost:4000/Courses/"+param.id, {
-            method: "PATCH",
-            body: formData,
-        })
-        .then(reponse => {
-            if(reponse.ok) {
-                navigate("/admin/courses");
+    
+        const formData = new FormData(event.target);
+        const courseFormData = new FormData();
+    
+        for (const [key, value] of formData.entries()) {
+            if (key.startsWith("course_")) {
+                courseFormData.append(key, value);
             }
-        })
-        .then(data => {
-            
-        })
-    }
+        }
+    
+        // Gửi yêu cầu cập nhật thông tin khóa học
+        await fetch(`http://localhost:4000/Courses/${param.id}`, {
+            method: "PATCH",
+            body: courseFormData
+        });
+    
+        // Cập nhật thông tin chi tiết khóa học
+        await Promise.all(detailCourse.map(async locationItem => {
+            const detailFormData = new FormData();
+            detailFormData.append("location", formData.get(`location_${locationItem.id}`));
+            detailFormData.append("start", formData.get(`start_${locationItem.id}`));
+            detailFormData.append("end", formData.get(`end_${locationItem.id}`));
 
+            detailFormData.append("day", [
+                formData.get(`ngayHoc1_${locationItem.id}`),
+                formData.get(`ngayHoc2_${locationItem.id}`),
+                formData.get(`ngayHoc3_${locationItem.id}`),
+            ]);
+    
+            // Gửi yêu cầu cập nhật thông tin chi tiết khóa học
+            
+            await fetch(`http://localhost:4000/detailCourse/${locationItem.id}`, {
+                method: "PATCH",
+                body: detailFormData,
+            });
+        }));
+    
+        // Chuyển hướng sau khi cập nhật thành công
+        navigate("/admin/courses");
+    }
+    
+
+    
+    function getCourseDetail() {
+        fetch(`http://localhost:4000/getCourseDetail?course_id=${param.id}`)
+        .then(response => {
+            if(response.ok) {
+                return response.json();
+            }
+            throw new Error('Network response was not ok.');
+        })  
+        .then(data => {
+            setDetailCourse(data);
+        })
+        .catch(error => {   
+            console.error('There was a problem with your fetch operation:', error);
+        });
+    }
+    
+    
+    useEffect(() => {
+        getCourses();
+        getCourseDetail();
+    }, []);
+    
    
-    useEffect(getCourses,[]);
     
     return (
    
@@ -125,11 +174,42 @@ var [course,setCourses] = useState({});
                                  </select>
                             </div> */}
                            
-                           
+            
                             <div class="product__item-form">
                                 <label for="">Mô tả sản phẩm</label>
-                                <textarea value={course.course_description} class="product__des-form" type="text" name="course_description"></textarea>
+                                <textarea  class="product__des-form" type="text" name="course_description"></textarea>
                             </div>
+
+                            {
+                            detailCourse.map(locationItem => (
+                                <div key={locationItem.id}>
+                                <div className="product__item-form">
+                                    <label htmlFor="">{'Cơ sở '+locationItem.id}</label>
+                                    <input value={locationItem.location} className="product__name-form" type="text" name={`location_${locationItem.id}`} placeholder="Nhập vào"/>
+                                </div>
+                                
+                                {
+                                    //index bang 1 tuong ung voi thu 3...
+                            locationItem.day.split(",").map((day, index) => (
+                          <div key={index} className="product__item-form">
+                        <label htmlFor={`ngayHoc${index + 1}_${locationItem.id}`}>{`Ngày Học ${index + 1}`}</label>
+                        <input defaultValue={day} className="product__name-form" type="text" name={`ngayHoc${index + 1}_${locationItem.id}`} placeholder="Nhập vào"/>
+                         </div>
+                            ))
+                            }
+                    
+                                <div className="product__item-form">
+                                    <label htmlFor="">Giờ vào học</label>
+                                    <input defaultValue={locationItem.start} className="product__name-form" type="text" name={`start_${locationItem.id}`} placeholder="Nhập vào"/>
+                                </div> 
+                    
+                                <div className="product__item-form">
+                                    <label htmlFor="">Giờ tan học</label>
+                                    <input defaultValue={locationItem.end} className="product__name-form" type="text" name={`end_${locationItem.id}`} placeholder="Nhập vào"/>
+                                </div>
+                            </div>
+                            ))};
+
                             <div class="home__product-btn">
                                 <button class="btn ">Hủy</button>
                                 <button  type="submit" class="btn btn--primary">Lưu</button>
