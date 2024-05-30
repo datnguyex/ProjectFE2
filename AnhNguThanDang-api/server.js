@@ -59,7 +59,29 @@ server.get('/getCourseDetail', (req, res) => {
 
     res.json(detailCourse);
 });
+//server.get('/getCourseByKeyWord', (req, res) => {
+  //  const keyWord = req.query.course_name; // Sử dụng req.query để lấy dữ liệu từ query string
+    //const db = router.db;
+    //const courses = db.get('courses').filter(course => course.course_name.includes(keyWord)).value(); // Sử dụng includes để tìm kiếm các khóa học có course_name chứa keyWord
 
+    //res.json(courses);
+//});
+const _ = require('lodash');
+server.get('/getCourseByKeyWord', (req, res) => {
+    const keyWord = req.query.course_name;
+    const db = router.db;
+    const courses = db.get('courses').filter(course => _.includes(_.toLower(course.course_name), _.toLower(keyWord))).value();
+    
+    res.json(courses);
+});
+
+server.get('/getLecturerByKeyWord', (req, res) => {
+    const keyWord = req.query.lecturer_name;
+    const db = router.db;
+    const lectures = db.get('lecturers').filter(lecture => _.includes(_.toLower(lecture.lecturer_name), _.toLower(keyWord))).value();
+    
+    res.json(lectures);
+});
 server.post('/login', (req, res) => {
   const { email, password } = req.body;
   const db = router.db;

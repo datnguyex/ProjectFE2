@@ -1,9 +1,10 @@
+import { useEffect, useState } from "react";
+import { Form, Link, useNavigate, useParams } from "react-router-dom";
 import "../../css/base.css"
 import "../../css/main.css"
 import "../../css/seller.css"
-import { Form, Link, useNavigate, useParams } from "react-router-dom";
 
-export function Navbar({onSubmit }) {   
+export function NavbarHome({onSubmit }) {   
     return (
         <div class="main">
             <header class="header">
@@ -81,7 +82,8 @@ export function Navbar({onSubmit }) {
                                 </a>
                             </li>
                             
-                            <Link class="navbar-item navbar-item--strong" to={"/auth/login"}>Đăng Xuất</Link>
+                            <Link class="navbar-item navbar-item--strong" to={"/auth/login"}>Đăng Nhập</Link>
+                            <Link class="navbar-item navbar-item--strong" to={"/auth/Register"}>Đăng Ký</Link>
                             <li class="navbar-item navbar-user">
                                 <img src="" alt="" class="navbar-user-img"/>
                                 <span class="navbar-user-name"></span>

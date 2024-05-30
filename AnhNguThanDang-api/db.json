@@ -106,29 +106,12 @@
     },
     {
       "course_img": "1716903126996-1716388547009-1716217983899-product1.jpg",
-      "course_name": "n",
+      "course_name": "j",
       "course_price": "",
       "course_duration": "",
-      "course_description": "n",
+      "course_description": "j",
       "createdAt": "2024-05-28T13:32:07.004Z",
       "id": 6
-    },
-    {
-      "course_name": "-",
-      "course_price": "9",
-      "course_duration": "9",
-      "course_description": "",
-      "createdAt": "2024-05-28T13:38:29.495Z",
-      "id": 7
-    },
-    {
-      "course_img": "1716907378686-1716385756919-1716217983899-product1.jpg",
-      "course_name": "k",
-      "course_price": "",
-      "course_duration": "",
-      "course_description": "k ",
-      "createdAt": "2024-05-28T14:42:58.693Z",
-      "id": 8
     }
   ],
   "detailCourse": [
@@ -150,51 +133,19 @@
     },
     {
       "location": "Thủ Đức",
-      "start": "n",
-      "end": "n",
-      "day": "n,n,n",
+      "start": "j",
+      "end": "j",
+      "day": "j,j,j",
       "course_id": 6,
       "id": 5
     },
     {
       "location": "Bình Thạnh",
-      "start": "n",
-      "end": "n",
-      "day": "n,n,n",
+      "start": "j",
+      "end": "j",
+      "day": "j,j,j",
       "course_id": 6,
       "id": 6
-    },
-    {
-      "location": "Thủ Đức",
-      "start": "m",
-      "end": "-",
-      "day": "-,-,-",
-      "course_id": 7,
-      "id": 7
-    },
-    {
-      "location": "Bình Thạnh",
-      "start": "-",
-      "end": "k",
-      "day": "-,-,-",
-      "course_id": 7,
-      "id": 8
-    },
-    {
-      "location": "Thủ Đức",
-      "start": "k",
-      "end": "k",
-      "day": "k,k,k",
-      "course_id": 8,
-      "id": 9
-    },
-    {
-      "location": "Bình Thạnh",
-      "start": "k",
-      "end": "k",
-      "day": "k,k,k",
-      "course_id": 8,
-      "id": 10
     }
   ],
   "locationCourse": [

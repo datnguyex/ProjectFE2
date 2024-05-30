@@ -11,6 +11,7 @@ import { Listlecturers } from './pages/admin/lecturers/Listlecturers';
 import { LecturerCreate } from './pages/admin/lecturers/LecturerCreate';
 import { LecturerUpdate } from './pages/admin/lecturers/LecturerUpdate';
 import {Navbar} from './pages/auth/navbarCourse';
+import {NavbarHome} from './pages/auth/navbarHome';
 import Login from './pages/auth/login';
 import Register from './pages/auth/Register';
 
@@ -61,6 +62,7 @@ function App() {
   return (  
     <div>
      <BrowserRouter>
+     <NavbarHome></NavbarHome>
       <Routes>
       <Route path='/auth/Register' element={<Register/>} /> 
       <Route path='/auth/login' element={ <Login/>} /> 

@@ -22,14 +22,7 @@ export function CourseList() {
   const [courses, setCourses] = useState([]);
   const [detailCourses, setDetailCourses] = useState([]);
 
-  const handleInputChange = (event) => {
-    const value = event.target.value;
-  
-  };
 
-  const handleSubmit = () => {
-    // Handle form submission
-  };
 
   function getCourses() {
     //phuong thuc get
@@ -149,7 +142,23 @@ export function CourseList() {
             setCourses(priceASC)
         }) 
       }
-      
+      function handleSubmit(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const keyword = formData.get("keyword");
+        fetch(`http://localhost:4000/getCourseByKeyWord?course_name=${keyword}`) 
+        .then(response => {
+          if(response.ok) {
+            return response.json();
+          }
+        })
+        .then(data => {
+          if(data) {
+            setCourses(data)
+          }
+        })
+      };
+
     
       //hook nay goi phuong thuc get lay ra course va detail course 
       //hook se duoc chay truoc
@@ -182,6 +191,7 @@ export function CourseList() {
 
     return (
       <div>
+            <Navbar onSubmit={handleSubmit} />
         {
             
 <div class="app__container">
@@ -220,11 +230,9 @@ export function CourseList() {
                     <button onClick={() => sortDuaration()} type="submit" class="home-filter__btn btn">Thời lượng</button>
                     
                    
-                    /* <div class="select-input">
+                    <div class="select-input">
                         <span class="home-filter__label" for="">Giá</span>
-                        <i class="search-icon fa-solid fa-angle-down"></i> 
-
-                      
+                        <i class="search-icon fa-solid fa-angle-down"></i>                       
                          <ul class="select-input__list">
                             <li class="select-input__item">
                              <button  n  onClick={() => priceDESC()}  id="btn-sellect-priceASC" type="submit">Cao Đến Thấp</button>
@@ -236,7 +244,7 @@ export function CourseList() {
                     </div>   
             
                     <button id="btnAddProject" name="" type="" class="home-filter__btn btn"><Link to="/admin/courses/create" class="seller__product-edit">Thêm</Link></button>
-                    <button id="btnAddProject" name="" type="" class="home-filter__btn btn"><Link to="/admin/lecturers" class="seller__product-edit">Giảng Viên</Link></button>
+                    <button id="btnLecturers" name="" type="" class="home-filter__btn btn"><Link to="/admin/lecturers" class="seller__product-edit">Giảng Viên</Link></button>
                 </div>
 
                 <div class="home__product">
@@ -293,7 +301,7 @@ export function CourseList() {
     </div>
 </div>
         }
-        <Navbar onInputChange={handleInputChange} onSubmit={handleSubmit} />
+
       </div>
     );
   }

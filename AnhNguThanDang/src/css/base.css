@@ -264,3 +264,19 @@ body {
 .select-input__link:hover {
     color: var(--primary-color);
 }
+.header-with-search {
+    width: 820px;
+}
+.header__search-input-wrap {
+    flex: 1 1;
+    height: 100%;
+    position: relative;
+    width: 700px;
+}
+.select-input__list {
+    margin-top: 13px;
+}
+#name_shop {
+    font-size: 1.8rem;
+    width: 100%;
+}
