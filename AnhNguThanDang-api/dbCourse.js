@@ -1,11 +1,11 @@
 {
-	"Course": [
+	"Course" : [
     {
       "course_id": 1,
       "course_name": "Toiec 4 Kỹ Năng",
       "course_description": " bài thi Toeic 4 kỹ năng đánh giá trình độ sử dụng tiếng Anh trong môi trường giao tiếp và làm việc quốc tế",
       "course_price": 1000,
-      "course_img": "",
+      "course_img": "ielts_prep_course_img.jpg",
 	  "course_duration": "3",
       "createdAt": "2024/05/20"
     },

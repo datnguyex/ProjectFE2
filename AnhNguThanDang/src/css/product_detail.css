@@ -10,7 +10,7 @@
 
 .title_product-detail {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   padding: 15px;
   border-radius: 2px;
   background-color: var(--white-color);
@@ -32,12 +32,35 @@
 .title_product-detail .product-detail-info .product-detail:hover {
   color: --outline-color;
 }
+
 .title_product-detail .product-detail-price {
   font-size: 2.4rem;
   margin: 10px;
   color: var(--outline-color);
   filter: blur(6);
 }
+.title_product-detail .product-detail-duration {
+  font-size: 2.4rem;
+  margin: 10px;
+  color: var(--outline-color);
+  filter: blur(6);
+}
+
+.title_product-detail .product-detail-start-date {
+  font-size: 2.4rem;
+  margin: 10px;
+  color: var(--outline-color);
+  filter: blur(6);
+}
+
+.title_product-detail .product-detail-location {
+  font-size: 2.4rem;
+  margin: 10px;
+  color: var(--outline-color);
+  filter: blur(6);
+}
+
+
 .title_product-detail .product-detail-action {
   display: flex;
   align-items: center;

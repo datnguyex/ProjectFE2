@@ -74,29 +74,29 @@ var [detailCourse,setDetailCourse] = useState([]);
     
 
     
-    function getCourseDetail() {
-        fetch(`http://localhost:4000/getCourseDetail?course_id=${param.id}`)
-        .then(response => {
-            if(response.ok) {
-                return response.json();
-            }
-            throw new Error('Network response was not ok.');
-        })  
-        .then(data => {
-            setDetailCourse(data);
-        })
-        .catch(error => {   
-            console.error('There was a problem with your fetch operation:', error);
-        });
-    }
+    // function getCourseDetail() {
+    //     fetch(`http://localhost:4000/getCourseDetail?course_id=${param.id}`)
+    //     .then(response => {
+    //         if(response.ok) {
+    //             return response.json();
+    //         }
+    //         throw new Error('Network response was not ok.');
+    //     })  
+    //     .then(data => {
+    //         setDetailCourse(data);
+    //     })
+    //     .catch(error => {   
+    //         console.error('There was a problem with your fetch operation:', error);
+    //     });
+    // }
     
     
     useEffect(() => {
         getCourses();
-        getCourseDetail();
+        // getCourseDetail();
     }, []);
     
-   
+//    console.log(course);
     
     return (
    

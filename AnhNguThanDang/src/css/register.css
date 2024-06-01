@@ -1,0 +1,49 @@
+.register__course {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+.register__course p {
+    font-size: 1.4rem;
+}
+.title__register {
+    font-size: 2.5rem;
+}
+.body__register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.name__register, .email__register, .phone__register, .text__register, #select__course {
+    height: 35px;
+    border-radius: 3px;
+    border: none;
+    color: var(--text-color);
+    padding-left: 10px;
+}
+
+#select__course option {
+    height: 30px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.text__register {
+    min-height: 50px;
+}
+
+.request {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn.btn__request {
+    background-color: var(--white-color);
+    color: var(--outline-color);
+}
