@@ -5,6 +5,21 @@ import "../../css/main.css"
 import "../../css/seller.css"
 
 export function NavbarHome({onSubmit }) {   
+
+    const [courses, setCourses] = useState([]);
+    function getCourses() {
+        //phuong thuc get
+        fetch("http://localhost:4000/Courses")
+        .then(reponse => {
+          if(reponse.ok) {
+            return reponse.json();
+          }
+        })
+        .then(data => {
+           setCourses(data)
+        })
+      }
+useEffect(getCourses,[]);
     return (
         <div class="main">
             <header class="header">
@@ -101,56 +116,58 @@ export function NavbarHome({onSubmit }) {
                             </li>
                         </ul>
                     </nav>
-                    <div class="header-with-search">
+                  
+                        <div class="header-nameGroup">
                         <div class="header__logo">
-                            <a href="" class="logo_link">
+                            <Link to="/student/Home" class="logo_link">
                                 <i class="bi bi-shop logo_shop"></i>
                                 <div class="name_header">
                                     <span id="name_shop" >Than</span> 
                                     <span  class="name_shop">Dang</span>
                                 </div>
-                            </a>
+                            </Link>
                         </div>
-                        <form onSubmit={onSubmit}>
-                        <div class="header__search">
-                            <div class="header__search-input-wrap">
-                              
-                              <input class="header__search-input"  name="keyword"/>
-                            
-                                <div class="header__search-history">
-                                    <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
-                                    <ul class="header__search-history-list">
-                                        <li class="header__search-history-item">
-                                            <a href="#" class="history-item-link">Kem dưỡng da</a>
-                                        </li>
-                                        <li class="header__search-history-item">
-                                            <a href="#" class="history-item-link">Kem dưỡng da</a>
-                                        </li>
-                                    </ul>
+
+                        <div id="header__logo" class="header__logo"> 
+                        <a href="" class="logo_linkz">
+                        <i class="bi bi-caret-down-fill"></i>
+                                <div class="name_header">
+                                    <span id="name_shopz">Điểm</span> 
+                                    <span id="name_shopz">Thi</span>   
                                 </div>
-                                
-                            </div>
-                            <div class="search-select">
-                                <span class="search-title">Trong Shop</span>
-                                <i class="search-icon fa-solid fa-angle-down"></i>
-                                <ul class="search-option">
-                                    <li class="search-option-item search-option-item-action">
-                                        <span>Trong Shop</span>
-                                        <i class="fa-solid fa-check"></i>
+                            </a>
+                            <ul class="header-listGroup">
+                                    <li class="navbar-user-item">
+                                        <Link to="/student/StudentResult" class="see-core navbar-user-link">Điểm Thi Học Viên</Link>
                                     </li>
-                                    <li class="search-option-item">
-                                        <span>Ngoài Shop</span>
-                                        <i class="fa-solid fa-check"></i>
+                                    <li class="navbar-user-item">
+                                        <Link to="/student/ScoreAndReview" class="navbar-user-link">Đánh Giá Và Gửi Điểm Thi</Link>
                                     </li>
-                                </ul>
-                            </div>
-                            
-                            <button class="search-btn">
-                                <i class="search-btn-icon bi bi-search"></i>
-                            </button>
-                        
+                            </ul>
                         </div>
-                        </form>
+
+                        <div class="header__logo header__logoCourse">
+                        <a href="" class="logo_linkz">
+                        <i class="bi bi-caret-down-fill"></i>
+                                <div class="name_header">
+                                    <span id="name_shopz" >Khóa</span> 
+                                    <span id="name_shopz" >Học</span> 
+                                </div>
+                            </a>
+                            <ul class="header-listGroupCourse">
+                                    
+                                   {
+                                     courses.map(course => (
+                                        <li class="navbar-user-item">
+                                        <a href="" class="see-core navbar-user-link">{course.course_name}</a>
+                                         </li>  
+                                     ))
+                                   }
+                            </ul>   
+                        </div>
+
+                        </div>
+                       
                         <div class="header__cart">
                             <div class="header__cart-wrap">
                                 <i class="cart-icon fa-solid fa-cart-shopping"></i>
@@ -163,7 +180,7 @@ export function NavbarHome({onSubmit }) {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                  
                 </div>
             </header>
         </div>

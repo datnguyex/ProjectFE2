@@ -36,6 +36,7 @@ export function CourseList() {
        setCourses(data)
     })
   }
+  
   function getCourseDetail() {
     //phuong thuc get
     fetch("http://localhost:4000/detailCourse")
@@ -146,6 +147,7 @@ export function CourseList() {
         event.preventDefault();
         const formData = new FormData(event.target);
         const keyword = formData.get("keyword");
+
         fetch(`http://localhost:4000/getCourseByKeyWord?course_name=${keyword}`) 
         .then(response => {
           if(response.ok) {
@@ -157,7 +159,17 @@ export function CourseList() {
             setCourses(data)
           }
         })
-      };
+        .then(() => {
+          //khi khong phai formData thi phai co header va stringtify no moi gui duoc
+          fetch(`http://localhost:4000/HistorySearch`, {
+            method: "POST",
+            body: JSON.stringify({ search_name: keyword }),
+            headers: {
+              "Content-Type": "application/json"
+            }
+          });
+        });
+    }
 
     
       //hook nay goi phuong thuc get lay ra course va detail course 

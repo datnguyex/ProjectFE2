@@ -62,6 +62,16 @@ export function Listlecturers() {
             setLecturer(data)
           }
         })
+        .then(() => {
+            //khi khong phai formData thi phai co header va stringtify no moi gui duoc
+            fetch(`http://localhost:4000/HistorySearch`, {
+              method: "POST",
+              body: JSON.stringify({ search_name: keyword }),
+              headers: {
+                "Content-Type": "application/json"
+              }
+            });
+          });
       };
 
     return(      

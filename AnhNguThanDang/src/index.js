@@ -14,6 +14,10 @@ import {Navbar} from './pages/auth/navbarCourse';
 import {NavbarHome} from './pages/auth/navbarHome';
 import Login from './pages/auth/login';
 import Register from './pages/auth/Register';
+import {ScoreAndReview} from "./pages/student/ScoreAndReview";
+import {Home} from "./pages/student/Home";
+import {StudenResult} from "./pages/student/StudentResult";
+
 
 //to="/Home" no se di chuyen den route va route se tra lai 1 component-> dia chi web cung thay doi
 // import component... tu file...
@@ -62,8 +66,11 @@ function App() {
   return (  
     <div>
      <BrowserRouter>
-     <NavbarHome></NavbarHome>
       <Routes>
+      
+      <Route path='/student/StudentResult' element={<StudenResult/>} /> 
+      <Route path='/student/Home' element={<Home/>} /> 
+      <Route path='/student/ScoreAndReview' element={<ScoreAndReview/>} /> 
       <Route path='/auth/Register' element={<Register/>} /> 
       <Route path='/auth/login' element={ <Login/>} /> 
       <Route path='/admin/courses' element={<CourseList />} /> 

@@ -280,3 +280,81 @@ body {
     font-size: 1.8rem;
     width: 100%;
 }
+#history-item-link {
+    border: none;
+    background-color: white;
+}
+.SearchParent {
+    background-color: white;
+    display: none;  
+    margin-top: -5px;
+}
+.header__search-input-wrap:hover .SearchParent {
+    display: block;
+}
+/* .header__search-history-list:hover #hstory-item-link {
+    background-color: #F5F5F5;
+} */
+#history-item-link {
+    width: 100%;
+    text-align: left;
+    background-color: transparent;  
+}
+#header__logo {
+    display: block;
+}
+.header-nameGroup {
+    display: flex;
+  
+}
+
+#name_shopz {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+.bi-caret-down-fill{
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.logo_linkz {
+    margin-right: 100px;
+    display: flex;
+    line-height: 80px;
+    text-decoration: none;
+    color: white;
+}
+#name_shopz {
+    margin-left: 5px;
+}
+.header-listGroup {
+ background-color: white;
+ list-style-type: none;
+margin-left: 8px;
+ position: fixed;
+ margin-top: -27px;
+ padding-left: 0;
+ display: none;
+}
+.navbar-user-link {
+    text-align: center;
+}
+#header__logo:hover .header-listGroup {
+    display: block;
+}   
+.see-core{
+    border-bottom: 1px solid  #F5F5F5;  
+}
+.header-listGroupCourse{
+    background-color: white;
+    list-style-type: none;
+   margin-left: 8px;
+    position: fixed;
+    margin-top: -27px;
+    padding-left: 0;
+    display: none;
+}
+.header__logoCourse:hover .header-listGroupCourse{
+    display: block;
+}

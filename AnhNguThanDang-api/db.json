@@ -49,21 +49,26 @@
       "description": "01",
       "imageFilename": "1716436191988-1716217488012-product1.jpg",
       "createdAt": "2024-05-23T03:49:51.989Z"
+    },
+    {
+      "review_img": "1717154923831-1716906646122-1716458190761-1716217983899-product1.jpg",
+      "review_studentNumber": "9",
+      "score": "9",
+      "review_courseId": "",
+      "studentReview": "9",
+      "createdAt": "2024-05-31T11:28:43.838Z",
+      "id": 11
     }
   ],
   "courses": [
     {
       "id": 2,
-      "course_name": "IELTS Preparation Course",
-      "course_description": "j",
+      "course_name": "Business English Course",
+      "course_description": "Whether it's a first brush on canvas or the last frame in an animation, Skillshare is here to support you on every step of your creative journey.",
       "course_price": "1200",
       "course_duration": "6",
-      "course_img": "1716558916848-1716388547009-1716217983899-product1.jpg",
-      "createdAt": "2024-05-21",
-      "instructor": "John Doe",
-      "category": "Language",
-      "rating": 4.8,
-      "studentsEnrolled": 150
+      "course_img": "BusinessEnglishCourse.jpg",
+      "createdAt": "2024-05-21"
     },
     {
       "id": 3,
@@ -72,11 +77,7 @@
       "course_price": 1100,
       "course_duration": 5,
       "course_img": "IELTSPreparationCourse.jpg",
-      "createdAt": "2024-05-22",
-      "instructor": "Jane Smith",
-      "category": "Language",
-      "rating": 4.7,
-      "studentsEnrolled": 130
+      "createdAt": "2024-05-22"
     },
     {
       "id": 4,
@@ -85,11 +86,7 @@
       "course_price": 900,
       "course_duration": 4,
       "course_img": "EnglishConversationPractice.jpg",
-      "createdAt": "2024-05-23",
-      "instructor": "Mark Johnson",
-      "category": "Language",
-      "rating": 4.6,
-      "studentsEnrolled": 170
+      "createdAt": "2024-05-23"
     },
     {
       "id": 5,
@@ -98,20 +95,16 @@
       "course_price": 800,
       "course_duration": 3,
       "course_img": "toiec4KyNang.jpg",
-      "createdAt": "2024-05-24",
-      "instructor": "Emily Davis",
-      "category": "Language",
-      "rating": 4.5,
-      "studentsEnrolled": 190
+      "createdAt": "2024-05-24"
     },
     {
-      "course_img": "1716903126996-1716388547009-1716217983899-product1.jpg",
+      "id": 6,
       "course_name": "j",
+      "course_description": "j",
       "course_price": "",
       "course_duration": "",
-      "course_description": "j",
-      "createdAt": "2024-05-28T13:32:07.004Z",
-      "id": 6
+      "course_img": "1716903126996-1716388547009-1716217983899-product1.jpg",
+      "createdAt": "2024-05-28T13:32:07.004Z"
     }
   ],
   "detailCourse": [
@@ -132,20 +125,20 @@
       "end": "7h30"
     },
     {
+      "id": 5,
       "location": "Thủ Đức",
       "start": "j",
       "end": "j",
       "day": "j,j,j",
-      "course_id": 6,
-      "id": 5
+      "course_id": 6
     },
     {
+      "id": 6,
       "location": "Bình Thạnh",
       "start": "j",
       "end": "j",
       "day": "j,j,j",
-      "course_id": 6,
-      "id": 6
+      "course_id": 6
     }
   ],
   "locationCourse": [
@@ -174,10 +167,16 @@
       "email": "minhhiep325@gmail.com"
     },
     {
-      "name": "Nguyen Duc Toan",
-      "email": "nhoctoan6666@gmail.com",
+      "id": 3,
+      "admin_name": "Nguyen Duc Toan",
       "password": 123,
-      "id": 3
+      "email": "nhoctoan6666@gmail.com"
+    },
+    {
+      "name": "khang",
+      "email": "khang@gmail.com",
+      "password": 123,
+      "id": 4
     }
   ],
   "lecturers": [
@@ -194,6 +193,49 @@
       "lecturer_name": "MS.Thiên Trân",
       "lecturer_certificate": ",,,",
       "lecturer_description": "“Với kinh nghiệm 10 năm giảng dạy Tiếng Anh, kinh nghiệm luyện thi và niềm đam mê với sự nghiệp “truyền lửa” đến học viên nhiều lứa tuổi, tôi mong muốn giúp các bạn học viên vượt qua rào cản ngôn ngữ này bằng phương pháp học hiệu quả, luôn đổi mới với xu hướng hiện đại. Chưa cần các bạn giỏi, cần trước là sự cố gắng.”"
+    }
+  ],
+  "HistorySearch": [
+    {
+      "id": 1,
+      "search_name": "MR.Hóa Lộc"
+    },
+    {
+      "id": 2,
+      "search_name": "Business English"
+    },
+    {
+      "id": 3,
+      "search_name": "english"
+    },
+    {
+      "id": 4,
+      "search_name": "ielts"
+    }
+  ],
+  "ScoreAndReview": [
+    {
+      "id": 1,
+      "review_img": "BusinessEnglishCourse.jpg",
+      "review_studentNumber": "1384",
+      "studentReview": "Khóa học rất chất lượng, tôi đã có thể giao tiếp thành thạo tiếng anh",
+      "score": "187",
+      "review_courseId": 1
+    },
+    {
+      "review_img": "1717165747664-arthur.jpg",
+      "review_studentNumber": "10",
+      "score": "20",
+      "review_courseId": "2",
+      "studentReview": "ssdada",
+      "id": 2
+    },
+    {
+      "review_studentNumber": "",
+      "score": "",
+      "review_courseId": "",
+      "studentReview": "Cảm Nhận Của Học Viên Về Khóa Học",
+      "id": 3
     }
   ]
 }
