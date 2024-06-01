@@ -70,7 +70,7 @@ export function ScoreAndReview(){
             <input name="review_img" type="file" class="fileScore"></input>
              <div class="groupInput">
         <div class="mb-3">
-            <input name="review_studentNumber" type="text" class="form-control" id="exampleInput" placeholder="Mã Số Học Viên"/>
+            <input name="review_studentEmail" type="text" class="form-control" id="exampleInput" placeholder="Email Học Viên"/>
           </div>
           <div class="mb-3">
             <input name="score" type="text" class="form-control" id="exampleInput" placeholder="Điểm Số"/>

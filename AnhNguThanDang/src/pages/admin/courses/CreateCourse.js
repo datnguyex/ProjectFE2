@@ -88,7 +88,7 @@ export function CreateCourse() {
         })
 
 
-        // navigate("/admin/courses");
+        navigate("/admin/courses");
 
     }
 

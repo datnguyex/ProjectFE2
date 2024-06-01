@@ -14,11 +14,10 @@ import {Navbar} from './pages/auth/navbarCourse';
 import {NavbarHome} from './pages/auth/navbarHome';
 import Login from './pages/auth/login';
 import Register from './pages/auth/Register';
-import Home from './pages/home';
 import { CourseDetail } from './pages/admin/courses/Course';
 
 import {ScoreAndReview} from "./pages/student/ScoreAndReview";
-import {Home} from "./pages/student/Home";
+import { Home } from "./pages/student/Home"
 import {StudenResult} from "./pages/student/StudentResult";
 
 
@@ -83,7 +82,7 @@ function App() {
       <Route path='/admin/lecturers' element={<Listlecturers />} /> 
       <Route path='/admin/lecturers/create' element={<LecturerCreate />} />
       <Route path='/admin/lecturers/update/:id' element={<LecturerUpdate />} />
-      <Route path='/home' element={<Home />} />
+      {/* <Route path='/home' element={<Home />} /> */}
       {/* <Route path='/admin/products/create' element={<CreateProduct />} /> */}
       {/*<Route path='/admin/products/edit/:id' element={<EditProduct />}/> */}
       </Routes>
@@ -99,7 +98,7 @@ function App() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Navbar />
+   
     <App />
   </React.StrictMode>
 );

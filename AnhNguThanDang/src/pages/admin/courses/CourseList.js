@@ -7,6 +7,7 @@ import "../../../css/profile.css"
 import "../../../css/product.css"
 import "../../../css/product_detail.css"
 import { useEffect, useState } from "react";
+import { Navbar } from "../../auth/navbarCourse";
 import axios from 'axios';
 //retuen chi dung de tra lai giao dien
 //vi get dung de lay du lieu nen phai gan lai data

@@ -134,7 +134,7 @@ export function CourseDetail() {
                                 <div className="product-detail-duration">
                                     <i aria-hidden="true" className="far fa-clock"></i>
                                     Thời lượng:
-                                    <span> {course.course_duration} giờ</span>
+                                    <span> {course.course_duration} Tháng</span>
                                 </div>
                                 <div className="product-detail-start-date">
                                     <i aria-hidden="true" className="far fa-calendar"></i>
