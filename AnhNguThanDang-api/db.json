@@ -55,10 +55,10 @@
     {
       "id": 2,
       "course_name": "IELTS Preparation Course",
-      "course_description": "j",
+      "course_description": "",
       "course_price": "1200",
       "course_duration": "6",
-      "course_img": "1716558916848-1716388547009-1716217983899-product1.jpg",
+      "course_img": "1717088179273-1716385756919-1716217983899-product1.jpg",
       "createdAt": "2024-05-21",
       "instructor": "John Doe",
       "category": "Language",
@@ -105,11 +105,11 @@
       "studentsEnrolled": 190
     },
     {
-      "course_img": "1716903126996-1716388547009-1716217983899-product1.jpg",
+      "course_img": "1717088206088-1716480540250-product6.jpg",
       "course_name": "n",
-      "course_price": "",
+      "course_price": "124456345",
       "course_duration": "",
-      "course_description": "n",
+      "course_description": "",
       "createdAt": "2024-05-28T13:32:07.004Z",
       "id": 6
     },
@@ -119,16 +119,33 @@
       "course_duration": "9",
       "course_description": "",
       "createdAt": "2024-05-28T13:38:29.495Z",
-      "id": 7
+      "id": 7,
+      "course_img": "1717088224166-1716560889532-1716388547009-1716217983899-product1.jpg"
     },
     {
-      "course_img": "1716907378686-1716385756919-1716217983899-product1.jpg",
+      "course_img": "1717088237861-product3.jpg",
       "course_name": "k",
       "course_price": "",
       "course_duration": "",
-      "course_description": "k ",
+      "course_description": "",
       "createdAt": "2024-05-28T14:42:58.693Z",
       "id": 8
+    },
+    {
+      "course_name": "",
+      "course_price": "",
+      "course_duration": "",
+      "course_description": " ",
+      "createdAt": "2024-06-01T03:18:34.860Z",
+      "id": 9
+    },
+    {
+      "course_name": "",
+      "course_price": "",
+      "course_duration": "",
+      "course_description": " ",
+      "createdAt": "2024-06-01T03:19:26.434Z",
+      "id": 10
     }
   ],
   "detailCourse": [
@@ -195,6 +212,38 @@
       "day": "k,k,k",
       "course_id": 8,
       "id": 10
+    },
+    {
+      "location": "Thủ Đức",
+      "start": "",
+      "end": "",
+      "day": ",,",
+      "course_id": 9,
+      "id": 11
+    },
+    {
+      "location": "Bình Thạnh",
+      "start": "",
+      "end": "",
+      "day": ",,",
+      "course_id": 9,
+      "id": 12
+    },
+    {
+      "location": "Thủ Đức",
+      "start": "",
+      "end": "",
+      "day": ",,",
+      "course_id": 10,
+      "id": 13
+    },
+    {
+      "location": "Bình Thạnh",
+      "start": "",
+      "end": "",
+      "day": ",,",
+      "course_id": 10,
+      "id": 14
     }
   ],
   "locationCourse": [
@@ -243,6 +292,141 @@
       "lecturer_name": "MS.Thiên Trân",
       "lecturer_certificate": ",,,",
       "lecturer_description": "“Với kinh nghiệm 10 năm giảng dạy Tiếng Anh, kinh nghiệm luyện thi và niềm đam mê với sự nghiệp “truyền lửa” đến học viên nhiều lứa tuổi, tôi mong muốn giúp các bạn học viên vượt qua rào cản ngôn ngữ này bằng phương pháp học hiệu quả, luôn đổi mới với xu hướng hiện đại. Chưa cần các bạn giỏi, cần trước là sự cố gắng.”"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "name": "Nguyễn Minh Hiệp",
+      "email": "minhhiep325@gmail.com",
+      "phone": 485,
+      "id_course": 2,
+      "requirement": "Về nội dung khóa học"
+    },
+    {
+      "id": 2,
+      "name": "Nguyễn Minh Hiệp",
+      "email": "minhhiep325@gmail.com",
+      "phone": 485,
+      "id_course": 2,
+      "requirement": "Về nội dung khóa học"
+    },
+    {
+      "id": 3,
+      "name": "Nguyễn Minh Hiệp",
+      "email": "minhhiep325@gmail.com",
+      "phone": 485,
+      "id_course": 2,
+      "requirement": "Về nội dung khóa học"
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 15
+    },
+    {
+      "id": 16
+    },
+    {
+      "id": 17
+    },
+    {
+      "id": 18
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "",
+      "id_course": "4",
+      "requirement": "",
+      "id": 19
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "",
+      "id_course": "4",
+      "requirement": "",
+      "id": 20
+    },
+    {
+      "name": "Nguyễn Minh Hiệp",
+      "email": "minhhiep325@gmail.com",
+      "phone": "0834983286",
+      "id_course": "4",
+      "requirement": "Học phí",
+      "id": 21
+    },
+    {
+      "name": "Minhxss",
+      "email": "minhhiep325@gmail.com",
+      "phone": "",
+      "id_course": "4",
+      "requirement": "",
+      "id": 22
+    },
+    {
+      "name": "Minhxss",
+      "email": "minhhiep325@gmail.com",
+      "phone": "",
+      "id_course": "4",
+      "requirement": "",
+      "id": 23
+    },
+    {
+      "name": "Minhxss",
+      "email": "minhhiep325@gmail.com",
+      "phone": "",
+      "id_course": "4",
+      "requirement": "",
+      "id": 24
+    },
+    {
+      "name": "Minhxss",
+      "email": "minhhiep325@gmail.com",
+      "phone": "",
+      "id_course": "4",
+      "requirement": "",
+      "id": 25
+    },
+    {
+      "name": "",
+      "email": "s",
+      "phone": "",
+      "id_course": "4",
+      "requirement": "",
+      "id": 26
     }
   ]
 }

@@ -1,5 +1,4 @@
 import { Form, Link, useNavigate } from "react-router-dom";
-
 import "../../../css/courseList.scss"
 import "../../../css/base.css"
 import "../../../css/main.css"
@@ -7,7 +6,6 @@ import "../../../css/seller.css"
 import "../../../css/profile.css"
 import "../../../css/product.css"
 import "../../../css/product_detail.css"
-import { Navbar } from "../../auth/navbarCourse";
 import { useEffect, useState } from "react";
 import axios from 'axios';
 //retuen chi dung de tra lai giao dien
@@ -16,9 +14,12 @@ import axios from 'axios';
 //chi co mang moi su dung 
 export function CourseList() {
 
+  //dùng để chuyển ddeeesn file mà người dùng thực hiện
+  //là một hook dùng để điều hướng người dùng
   const navigate = useNavigate();
 
 
+  //
   const [courses, setCourses] = useState([]);
   const [detailCourses, setDetailCourses] = useState([]);
 
@@ -43,6 +44,7 @@ export function CourseList() {
        setCourses(data)
     })
   }
+
   function getCourseDetail() {
     //phuong thuc get
     fetch("http://localhost:4000/detailCourse")
@@ -84,7 +86,7 @@ export function CourseList() {
   
 
  
-//vi cousrse detail da dươc lien ket voi course nen co the sap xep thong qua course
+  //vi cousrse detail da dươc lien ket voi course nen co the sap xep thong qua course
     function Oldest() {
         fetch("http://localhost:4000/Courses")
         .then(response => {
@@ -179,6 +181,13 @@ export function CourseList() {
         ...course,//chuyen doi gia tri -> giong ajax
         details: detailCourses.filter(detailCourse => detailCourse.course_id === course.id)
     }));
+
+     joinedData.map(course => {
+      // In ra course_id của từng phần tử trong joinedDatas
+      console.log(course.details);
+      
+  });
+    // console.log(joinedData);
 
     return (
       <div>
@@ -293,7 +302,6 @@ export function CourseList() {
     </div>
 </div>
         }
-        <Navbar onInputChange={handleInputChange} onSubmit={handleSubmit} />
       </div>
     );
   }

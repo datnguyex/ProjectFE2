@@ -1,7 +1,10 @@
+import "../../css/courseList.scss"
 import "../../css/base.css"
 import "../../css/main.css"
 import "../../css/seller.css"
-
+import "../../css/profile.css"
+import "../../css/product.css"
+import "../../css/product_detail.css"
 export function Navbar(onInputChange, onSubmit) {
     const handleInputChange = (event) => {
         const value = event.target.value;
