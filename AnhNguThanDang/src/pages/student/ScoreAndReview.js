@@ -7,6 +7,7 @@ export function ScoreAndReview(){
 
    const [courses, setCourses] = useState([]);
    const [defaulValue, setDefaultValue] = useState([]);
+   const [user, setUser] = useState([]);
 
     function getCourses() {
         //phuong thuc get
@@ -20,22 +21,48 @@ export function ScoreAndReview(){
            setCourses(data)
         })
       }
+      function getUser() {
+        //phuong thuc get
+        fetch("http://localhost:4000/user")
+        .then(reponse => {
+          if(reponse.ok) {
+            return reponse.json();
+          }
+        })
+        .then(data => {
+           setUser(data)
+        })
+      }
+
       function handleChangeDefaultValue(value) {
             setDefaultValue(value);
         }
-      function handleSubmit(event) {
+
+     async function handleSubmit(event) {
         event.preventDefault();
-        const formData = new FormData(event.target);   
-        fetch("http://localhost:4000/ScoreAndReview",{
+        const formData = new FormData(event.target);  
+        const isUserExist = user.find(us => us.email === formData.get("review_studentEmail"));
+        if(isUserExist) {
+          const response = await fetch("http://localhost:4000/ScoreAndReview",{
             method: "POST",
             body: formData,
-
         });
-
+        if(response) {
+          alert("Gửi Thành Công")
+        }
+        }
+        else {
+          alert("Học Viên Không Có Trong Lớp Học")
+        }
+    
       }
-    useEffect(getCourses,[]);
+      useEffect(() => {
+        getCourses();
+        getUser();
+      }, []);
     return (
         <div>
+
             <NavbarHome />
             <div className="container mt-5">
                 <h1>Gửi Điểm Số Và Cảm Nhận Về Khóa Học</h1>
@@ -75,8 +102,8 @@ export function ScoreAndReview(){
           <div class="mb-3">
             <input name="score" type="text" class="form-control" id="exampleInput" placeholder="Điểm Số"/>
           </div>
-        
-            <input defaultValue={defaulValue} name="review_courseId" type="text" class="form-control" id="review_courseId" placeholder="Course_id"/>
+{/*         
+            <input defaultValue={defaulValue} name="review_courseId" type="text" class="form-control" id="review_courseId" placeholder="Course_id"/> */}
          
         </div>
         

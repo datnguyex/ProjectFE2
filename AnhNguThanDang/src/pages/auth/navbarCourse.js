@@ -13,6 +13,7 @@ import "../../css/product_detail.css"
         const [historySearch, setHistorySearch] = useState([]);
 
         const [defaulValue, setDefaultValue] = useState([]);
+        
 
         function getHistorySearch() {
             fetch("http://localhost:4000/HistorySearch")
@@ -30,7 +31,50 @@ import "../../css/product_detail.css"
         function handleChangeDefaultValue(value) {
             setDefaultValue(value);
         }
+
+        function deleteSearchHistory(value) {
+            fetch("http://localhost:4000/HistorySearch/" + value, {
+                method: "DELETE"
+            })
+            .then(response => {
+                if(response.ok) {
+                    getHistorySearch();
+                    setDefaultValue("Xóa dữ liệu thành công");
+                }
+            }) 
+            
+        }
+        
         useEffect(getHistorySearch,[]);
+        const liClick = document.querySelector("#header__search-history-item");
+        const inputDisplay = document.querySelector("#header__search-input");
+        const btnClick = document.querySelector("#history-item-link");
+        const deleteClick = document.querySelector("#bi-x");
+
+        // if (liClick && inputDisplay) { 
+        //     liClick.addEventListener("click", function() {
+        //         inputDisplay.style.color = "white"; // Màu chữ mờ
+        //         inputDisplay.style.opacity = "0.8"; // Độ mờ
+        //     });
+        // }
+
+        // if (btnClick && inputDisplay) { 
+        //     btnClick.addEventListener("click", function() {
+        //         inputDisplay.style.color = "white"; // Màu chữ mờ
+        //         inputDisplay.style.opacity = "0.8"; // Độ mờ
+        //     });
+        // }
+
+        // if (deleteClick && inputDisplay) { 
+        //     deleteClick.addEventListener("click", function() {
+        //         setDefaultValue("Nhập");
+        //     });
+        // }
+       
+        
+        
+
+       
         return (
             <div class="main">
                 <header class="header">
@@ -140,23 +184,29 @@ import "../../css/product_detail.css"
                             <div class="header__search">
                                 <div class="header__search-input-wrap">
                                 
-                                <input defaultValue={defaulValue}
-                                            id="header__search-input"
-                                            className="header__search-input"
-                                            name="keyword"
-                                            autoComplete="off" />
+                                <input 
+    defaultValue={defaulValue}
+    id="header__search-input"
+    className="header__search-input"
+    name="keyword"
+    autoComplete="off"
+/>
                                     <div class="SearchParent">
                                         <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
                                     <ul class="header__search-history-list">
                                         {
                                             historySearch.map(search => (
-                                        <li  onClick={() => handleChangeDefaultValue(search.search_name)}  class="header__search-history-item">
+                                        <li  onClick={() => handleChangeDefaultValue(search.search_name)} id="header__search-history-item"  class="header__search-history-item">
+                                             <i onClick={() => deleteSearchHistory(search.id)} id="bi-x" class="bi bi-x"></i>
                                          <button type="submit" id="history-item-link" className="history-item-link">
                                             {search.search_name}
                                             </button>
+                                           
                                             </li>
                                              ))
+                                             
                                             }
+                                          
                                             </ul>
                                     </div>
                                     
