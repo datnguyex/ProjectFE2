@@ -1,17 +1,18 @@
-import React from 'react';
-import { useEffect, useState } from "react";
 import { Form, Link, useNavigate, useParams } from "react-router-dom";
-import axios from 'axios';
+
 import "../../../css/courseList.scss"
 import "../../../css/base.css"
 import "../../../css/main.css"
-import "../../../css/seller.css"
 import "../../../css/profile.css"
+import "../../../css/seller.css"
 import "../../../css/product.css"
 import "../../../css/product_detail.css"
-import "../../../css/register.css";
+import "../../../css/listLecturer.scss"
+import { useEffect, useState } from "react";
+import {getLecturers,deleteLecturer} from "../../../components/lecturers/CpnLecturers";
+import { Navbar } from "../../auth/navbarCourse";
 import ReactPaginate from 'react-paginate';
-import "../../../../../node_modules/bootstrap/dist/css/bootstrap-grid.css"
+import axios from 'axios';
 
 export function UserList() {
     const navigate = useNavigate();
@@ -96,104 +97,193 @@ export function UserList() {
     }
 
     return (
-        <div >{
-            <div className="app__container">
-                <div className="grid">
-                    <div className="grid__row app__contents_seller">
-                        <div className="grid__column-12">
-                            <div>
-                                <h3>DANH SÁCH SINH VIÊN</h3>
-                                <div>
-                                    <Link class="btn btn-primary btn-lg" to="/admin/user/create">Thêm</Link>
+        <div>
+            <Navbar onSubmit={HandleSubmit} />
+            {
+                <div class="app__container">
+                    <div class="grid">
+                        <div class="grid__row app__contents_seller ">
+                            <div class="grid__column-12">
+                                <div class="home-filter">
+                                    <span class="home-filter-title">Sắp xếp theo</span>
+
+
+                                    {/* <button onClick={() => Newest()} name="newest"  type="submit" class="home-filter__btn btn btn--primary">Mới nhất</button> 
+                            <button  onClick={() => Oldest()}  type="submit" class="home-filter__btn btn">Cũ nhất</button>
+                            <button onClick={() => sortDuaration()} type="submit" class="home-filter__btn btn">Thời lượng</button>
+                             */}
+
+
+                                    <button id="btnAddProject" name="" type="" class="home-filter__btn btn"><Link to="/admin/user/create" class="seller__product-edit">Thêm</Link></button>
+                                    <button id="btnAddProject" name="" type="" class="home-filter__btn btn"><Link to="/admin/courses" class="seller__product-edit">Khóa Học</Link></button>
+                                </div>
+
+                                <div class="home__product">
+                                    <div class="grid__row">
+
+                                        <div class="grid__column-product">
+                                            <table id="customers">
+                                                
+                                                <tr>
+                                                    <th className='th_user' scope="col">id</th>
+                                                    <th className='th_user' scope="col">Họ và tên</th>
+                                                    <th className='th_user' scope="col">email</th>
+                                                    <th className='th_user' scope="col">sđt</th>
+                                                    <th className='th_user' scope="col">Tên khóa học</th>
+                                                    <th className='th_user' scope="col">Nội dung yêu cầu</th>
+                                                    <th className='th_user' scope="col">Sự kiện</th>
+                                                </tr>
+
+                                                <tbody class="table-group-divider">
+                                                    {userData.map(user => (
+                                                        <tr>
+                                                            <th className='td_user' >{user.id}</th>
+                                                            <td className='td_user'> {user.name}</td>
+                                                            <td className='td_user'> {user.email}</td>
+                                                            <td className='td_user'> {user.phone}</td>
+                                                            <td className='td_user'> {user.id_course}</td>
+                                                            <td className='td_user'> {user.requirement}</td>
+                                                            <td className='td_user'>
+                                                                <div>
+                                                                    <Link class="btn btn-sm btn-info" to={`/admin/user/update/${user.id}`}>Cập nhật</Link>
+                                                                </div>
+                                                                <div>
+                                                                    <button class="btn btn-sm btn-danger" onClick={() => deleteUser(user.id)} id="delete_Product" type="submit">Xóa</button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    )
+                                                    )}
+                                                </tbody>
+
+                                            </table>
+                                            <ReactPaginate
+                                                breakLabel="..."
+                                                nextLabel=">>"
+                                                onPageChange={handlePageClick}
+                                                pageRangeDisplayed={5}
+                                                pageCount={Math.ceil(totalUsers.length / 10)}
+                                                previousLabel="<<"
+                                                pageClassName='page-item'
+                                                pageLinkClassName='page-link'
+                                                previousClassName='page-item'
+                                                previousLinkClassName='page-link'
+                                                nextClassName='page-item'
+                                                nextLinkClassName='page-link'
+                                                breakClassName='page-item'
+                                                breakLinkClassName='page-link'
+                                                containerClassName='pagination'
+                                                activeClassName='active'
+                                            />
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
-                            <table class="table table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th className='th_user' scope="col">id</th>
-                                        <th className='th_user' scope="col">Họ và tên</th>
-                                        <th className='th_user' scope="col">email</th>
-                                        <th className='th_user' scope="col">sđt</th>
-                                        <th className='th_user' scope="col">Tên khóa học</th>
-                                        <th className='th_user' scope="col">Nội dung yêu cầu</th>
-                                        <th className='th_user' scope="col">Sự kiện</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="table-group-divider">
-                                    {userData.map(user => (
-                                        <tr>
-                                            <th className='td_user' scope="row">{user.id}</th>
-                                            <td className='td_user'> {user.name}</td>
-                                            <td className='td_user'> {user.email}</td>
-                                            <td className='td_user'> {user.phone}</td>
-                                            <td className='td_user'> {user.id_course}</td>
-                                            <td className='td_user'> {user.requirement}</td>
-                                            <td className='td_user'>
-                                                <div>
-                                                    <Link class="btn btn-sm btn-info" to={`/admin/user/update/${user.id}`}>Cập nhật</Link>
-                                                </div>
-                                                <div>
-                                                    <button class="btn btn-sm btn-danger" onClick={() => deleteUser(user.id)} id="delete_Product" type="submit">Xóa</button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    )
-                                    )}
-                                </tbody>
-                            </table>
-                            <ReactPaginate
-                                breakLabel="..."
-                                nextLabel=">>"
-                                onPageChange={handlePageClick}
-                                pageRangeDisplayed={5}
-                                pageCount={Math.ceil(totalUsers.length / 10)}
-                                previousLabel="<<"
-                                pageClassName='page-item'
-                                pageLinkClassName='page-link'
-                                previousClassName='page-item'
-                                previousLinkClassName='page-link'
-                                nextClassName='page-item'
-                                nextLinkClassName='page-link'
-                                breakClassName='page-item'
-                                breakLinkClassName='page-link'
-                                containerClassName='pagination'
-                                activeClassName='active'
-                            />
                         </div>
-
                     </div>
                 </div>
-            </div>
-            // <div class="container">
-            //     <h1>Quản lý người dùng</h1>
-
-            //     <table class="table table-striped table-hover">
-            //         <thead>
-            //             <tr>
-            //                 <th>Ảnh đại diện</th>
-            //                 <th>Tên</th>
-            //                 <th>Email</th>
-            //                 <th>Vai trò</th>
-            //                 <th>Hành động</th>
-            //             </tr>
-            //         </thead>
-            //         <tbody>
-            //             <tr>
-            //                 <td><img src="user-avatar.png" alt="Ảnh đại diện" class="rounded-circle" width="32" height="32" /></td>
-            //                 <td>Nguyễn Văn A</td>
-            //                 <td>nguyenvana@example.com</td>
-            //                 <td>Quản trị viên</td>
-            //                 <td>
-            //                     <a href="#" class="btn btn-sm btn-info">Chỉnh sửa</a>
-            //                     <a href="#" class="btn btn-sm btn-danger">Xóa</a>
-            //                 </td>
-            //             </tr>
-            //         </tbody>
-            //     </table>
-
-            //     <a href="#" class="btn btn-primary btn-lg">Thêm người dùng mới</a>
-            // </div>
-        }
+            }
         </div>
+
+        // <div >{
+        //     <div className="app__container">
+        //         <div className="grid">
+        //             <div className="grid__row app__contents_seller">
+        //                 <div className="grid__column-12">
+        //                     <div>
+        //                         <h3>DANH SÁCH SINH VIÊN</h3>
+        //                         <div>
+        //                             <Link class="btn btn-primary btn-lg" to="/admin/user/create">Thêm</Link>
+        //                         </div>
+        //                     </div>
+        //                     <table class="table table-striped table-hover">
+        //                         <thead>
+        //                             <tr>
+        //                                 <th className='th_user' scope="col">id</th>
+        //                                 <th className='th_user' scope="col">Họ và tên</th>
+        //                                 <th className='th_user' scope="col">email</th>
+        //                                 <th className='th_user' scope="col">sđt</th>
+        //                                 <th className='th_user' scope="col">Tên khóa học</th>
+        //                                 <th className='th_user' scope="col">Nội dung yêu cầu</th>
+        //                                 <th className='th_user' scope="col">Sự kiện</th>
+        //                             </tr>
+        //                         </thead>
+        //                         <tbody class="table-group-divider">
+        //                             {userData.map(user => (
+        //                                 <tr>
+        //                                     <th className='td_user' scope="row">{user.id}</th>
+        //                                     <td className='td_user'> {user.name}</td>
+        //                                     <td className='td_user'> {user.email}</td>
+        //                                     <td className='td_user'> {user.phone}</td>
+        //                                     <td className='td_user'> {user.id_course}</td>
+        //                                     <td className='td_user'> {user.requirement}</td>
+        //                                     <td className='td_user'>
+        //                                         <div>
+        //                                             <Link class="btn btn-sm btn-info" to={`/admin/user/update/${user.id}`}>Cập nhật</Link>
+        //                                         </div>
+        //                                         <div>
+        //                                             <button class="btn btn-sm btn-danger" onClick={() => deleteUser(user.id)} id="delete_Product" type="submit">Xóa</button>
+        //                                         </div>
+        //                                     </td>
+        //                                 </tr>
+        //                             )
+        //                             )}
+        //                         </tbody>
+        //                     </table>
+        //                     <ReactPaginate
+        //                         breakLabel="..."
+        //                         nextLabel=">>"
+        //                         onPageChange={handlePageClick}
+        //                         pageRangeDisplayed={5}
+        //                         pageCount={Math.ceil(totalUsers.length / 10)}
+        //                         previousLabel="<<"
+        //                         pageClassName='page-item'
+        //                         pageLinkClassName='page-link'
+        //                         previousClassName='page-item'
+        //                         previousLinkClassName='page-link'
+        //                         nextClassName='page-item'
+        //                         nextLinkClassName='page-link'
+        //                         breakClassName='page-item'
+        //                         breakLinkClassName='page-link'
+        //                         containerClassName='pagination'
+        //                         activeClassName='active'
+        //                     />
+        //                 </div>
+
+        //             </div>
+        //         </div>
+        //     </div>
+        //     // <div class="container">
+        //     //     <h1>Quản lý người dùng</h1>
+
+        //     //     <table class="table table-striped table-hover">
+        //     //         <thead>
+        //     //             <tr>
+        //     //                 <th>Ảnh đại diện</th>
+        //     //                 <th>Tên</th>
+        //     //                 <th>Email</th>
+        //     //                 <th>Vai trò</th>
+        //     //                 <th>Hành động</th>
+        //     //             </tr>
+        //     //         </thead>
+        //     //         <tbody>
+        //     //             <tr>
+        //     //                 <td><img src="user-avatar.png" alt="Ảnh đại diện" class="rounded-circle" width="32" height="32" /></td>
+        //     //                 <td>Nguyễn Văn A</td>
+        //     //                 <td>nguyenvana@example.com</td>
+        //     //                 <td>Quản trị viên</td>
+        //     //                 <td>
+        //     //                     <a href="#" class="btn btn-sm btn-info">Chỉnh sửa</a>
+        //     //                     <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+        //     //                 </td>
+        //     //             </tr>
+        //     //         </tbody>
+        //     //     </table>
+
+        //     //     <a href="#" class="btn btn-primary btn-lg">Thêm người dùng mới</a>
+        //     // </div>
+        // }
+        // </div>
     );
 }

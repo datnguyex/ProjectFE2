@@ -196,7 +196,7 @@ export function CreateCourse() {
 
 
                                     <div className="home__product-btn">
-                                        <button className="btn ">Hủy</button>
+                                        <button onClick={"/home"} className="btn ">Hủy</button>
                                         <button type="submit" className="btn btn--primary">Lưu</button>
                                     </div>
 

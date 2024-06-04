@@ -100,7 +100,6 @@ useEffect(getCourses,[]);
                             <Link class="navbar-item navbar-item--strong" to={"/auth/login"}>Đăng Nhập</Link>
                             <Link class="navbar-item navbar-item--strong" to={"/auth/Register"}>Đăng Ký</Link>
                             <li class="navbar-item navbar-user">
-                                <img src="" alt="" class="navbar-user-img"/>
                                 <span class="navbar-user-name"></span>
                                 <ul class="navbar-user-info">
                                     <li class="navbar-user-item">
@@ -119,7 +118,7 @@ useEffect(getCourses,[]);
                   
                         <div class="header-nameGroup">
                         <div class="header__logo">
-                            <Link to="/student/Home" class="logo_link">
+                            <Link to="/home" class="logo_link">
                                 <i class="bi bi-shop logo_shop"></i>
                                 <div class="name_header">
                                     <span id="name_shop" >Than</span> 

@@ -10,9 +10,9 @@ import "../../../css/profile.css"
 import "../../../css/product.css"
 import "../../../css/product_detail.css"
 import "../../../css/register.css";
+import { Navbar } from "../../auth/navbarCourse";
 import ReactPaginate from 'react-paginate';
-// import "../node_modules/bootstrap/scss/bootstrap";
-import "../../../../../node_modules/bootstrap/dist/css/bootstrap-grid.css"
+
 export function UserUpdate() {
     const navigate = useNavigate();
     var param = useParams();
@@ -66,7 +66,7 @@ export function UserUpdate() {
         });
         navigate("/admin/users");
     }
-    
+
 
 
 
@@ -83,7 +83,7 @@ export function UserUpdate() {
             .then(response => {
                 setReview(response.data);
             })
-            axios.get('http://localhost:4000/Courses')
+        axios.get('http://localhost:4000/Courses')
             .then(response => {
                 setCourses(response.data);
             })
@@ -110,37 +110,77 @@ export function UserUpdate() {
     //sau khi hook truyen du lieu cho useState -> useState se co gia tri de tra xuong day
     // const joinedData = detailCourse.filter(detailCourse => detailCourse.course_id === user.id_course)
 
-    
+
 
     return (
-        <div >{
-            <div class="register__course">
+        <div>
+            <Navbar /> {
                 <form onSubmit={HandleSubmit}>
-                    <h3 class="title__register">Đăng ký nhận tư vấn</h3>
-                    <p>Vui lòng điền đầy đủ các thông tin theo mẫu dưới đây,</p>
-                    <p>Anh Ngữ Thiên Ân sẽ liên lạc với bạn trong 1 – 2 ngày làm việc. Hoặc gọi ngay cho Trung tâm theo
-                        số điện thoại bên dưới</p>
-                    <div class="body__register">
-                        <input defaultValue={user.name} name="name" type="text" class="name__register" placeholder="Họ tên" />
-                        <input defaultValue={user.email} name="email" type="text" class="email__register" placeholder="Email" />
-                        <input defaultValue={user.phone} name="phone" type="text" class="phone__register" placeholder="Số điện thoại" />
-                        <select name="id_course" id="select__course">
-                            Chọn khóa học
-                            {joinedDatas.map(course => (
-                                String(course.id) === String(param.id) ? (
-                                    <option selected value={course.id}>{course.course_name}</option>
-                                ) : <option value={course.id}>{course.course_name}</option>
-                            ))
-                            }
-                        </select>
-                        <textarea defaultValue={user.requirement} name="requirement" type="text" class="text__register" placeholder="Nội dung bạn cần tư vấn" ></textarea>
-                    </div>
-                    <div class="request">
-                        <button type="submit" class="btn btn__request">Gửi yêu cầu</button>
+                    <div className="app__container">
+
+                        <div className="grid">
+                            <div className="grid__row app__contents_seller">
+                                <div className="gird__column-2_seller">
+                                    <nav className="category">
+                                        <ul className="category-list">
+                                            <li className="category-item category-item--active">
+                                                <a href="" className="category-item__link">Thông tin cơ bản</a>
+                                            </li>
+                                            <li className="category-item">
+                                                <a href="" className="category-item__link">Thông tin khác</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div className="grid__column-10">
+                                    <div className="home-filter">
+                                        <span className="home-filter-title product-filter-title">Cập Nhật Sinh Viên</span>
+                                    </div>
+
+                                    <div className="home__product">
+                                        <div className="grid__row-product">
+                                            <div className="product__item-form">
+                                                <label htmlFor="lecturer_name">Tên Sinh Viên</label>
+                                                <input defaultValue={user.name} className="product__name-form" type="text" name="name" placeholder="Nhập vào" />
+                                            </div>
+                                            <div className="product__item-form">
+                                                <label htmlFor="lecturer_name">Email</label>
+                                                <input defaultValue={user.email} className="product__name-form" type="text" name="email" placeholder="Nhập vào" />
+                                            </div>
+                                            <div className="product__item-form">
+                                                <label htmlFor="lecturer_name">Số điện thoại</label>
+                                                <input defaultValue={user.phone} className="product__name-form" type="text" name="phone" placeholder="Nhập vào" />
+                                            </div>
+                                            <div className="product__item-form">
+                                                <label htmlFor="lecturer_name">Chọn khóa học</label>
+                                                <div class="col-md-6">
+                                                    <select name="id_course" class="form-control select__course" required>
+                                                        <option value="">Chọn khóa học</option>
+                                                        {joinedDatas.map(course => (
+                                                            String(course.id) === String(param.id) ? (
+                                                                <option selected value={course.id}>{course.course_name}</option>
+                                                            ) : <option value={course.id}>{course.course_name}</option>
+                                                        ))
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div className="product__item-form">
+                                                <label htmlFor="lecturer_description">Yêu cầu tư vấn</label>
+                                                <textarea defaultValue={user.requirement} className="product__des-form" name="requirement" placeholder="Nhập vào"></textarea>
+                                            </div>
+                                            <div className="home__product-btn">
+                                                <button className="btn" type="button">Hủy</button>
+                                                <button type="submit" className="btn btn--primary">Lưu</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </form>
-            </div>
-        }
+            }
         </div>
     );
 }

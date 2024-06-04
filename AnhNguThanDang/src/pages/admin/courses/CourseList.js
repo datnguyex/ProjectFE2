@@ -245,6 +245,7 @@ export function CourseList() {
             
                     <button id="btnAddProject" name="" type="" class="home-filter__btn btn"><Link to="/admin/courses/create" class="seller__product-edit">Thêm</Link></button>
                     <button id="btnLecturers" name="" type="" class="home-filter__btn btn"><Link to="/admin/lecturers" class="seller__product-edit">Giảng Viên</Link></button>
+                    <button id="btnLecturers" name="" type="" class="home-filter__btn btn"><Link to="/admin/users" class="seller__product-edit">Sinh Viên</Link></button>
                 </div>
 
                 <div class="home__product">

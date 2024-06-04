@@ -56,7 +56,7 @@ export function Home() {
                    <div class="grid__column-12 advertisement">
                        <div class="adver_main">
                            <div class="img_main">
-                               <img src="http://localhost:4000/images/1716390528925-BusinessEnglishCourse.jpg" alt="" id="main_img_Advertisement" />
+                               <img src="http://localhost:4000/images/1716522975523-IELTSPreparationCourse.jpg" alt="" id="main_img_Advertisement" />
                            </div>
                            <div class="img_Item">
                                <img src="http://localhost:4000/images/anime.jpg" alt="" class="item_img_Advertisement" />

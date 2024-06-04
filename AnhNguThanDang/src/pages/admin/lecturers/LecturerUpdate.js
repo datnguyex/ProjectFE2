@@ -8,46 +8,46 @@ import "../../../css/seller.css"
 import "../../../css/product.css"
 import "../../../css/product_detail.css"
 import "../../../css/listLecturer.scss"
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getLectureById,UpdateLecture } from "../../../components/lecturers/CpnLecturers";
+import { getLectureById, UpdateLecture } from "../../../components/lecturers/CpnLecturers";
 
 export function LecturerUpdate() {
 
     const params = useParams();
 
-    const [Lecturer,setLecturer] = useState([])
+    const [Lecturer, setLecturer] = useState([])
 
-    const navigate = useNavigate(); 
-    function HandleSubmitUpdateLect(event){
+    const navigate = useNavigate();
+    function HandleSubmitUpdateLect(event) {
         event.preventDefault();
-        UpdateLecture(params.id,event)
-        .then(response => {
-            if(response.ok) {
-                navigate("/admin/lecturers");
-            }
-        })
+        UpdateLecture(params.id, event)
+            .then(response => {
+                if (response.ok) {
+                    navigate("/admin/lecturers");
+                }
+            })
 
     }
 
-    useEffect(function() {
+    useEffect(function () {
         getLectureById(params.id)
-        .then(function(reponse) {
-            if (reponse) {
-                return reponse.json();
-            }
-          })
-          .then(function(data) {
-            if (data) {
-              setLecturer(data);
-            }
-          })
-      }, []);
+            .then(function (reponse) {
+                if (reponse) {
+                    return reponse.json();
+                }
+            })
+            .then(function (data) {
+                if (data) {
+                    setLecturer(data);
+                }
+            })
+    }, []);
 
     return (
 
-       <form onSubmit={HandleSubmitUpdateLect}>
-         <div className="app__container">
+        <form onSubmit={HandleSubmitUpdateLect}>
+            <div className="app__container">
 
                 <div className="grid">
                     <div className="grid__row app__contents_seller">
@@ -72,36 +72,36 @@ export function LecturerUpdate() {
                                 <div className="grid__row-product">
                                     <div className="product__item-form">
                                         <label>Thêm ảnh khóa học</label>
-                                        <button 
-                                            className="btn--textFile have-img" 
+                                        <button
+                                            className="btn--textFile have-img"
                                             type="button"
                                             onClick={() => document.getElementById('ipImg').click()}
                                         >
                                             <div className="delete__img">
                                                 <i className="fa-solid fa-x"></i>
                                             </div>
-                                            <img src="http://localhost:4000/images/product1.jpg" alt=""/>
+                                            <img src="http://localhost:4000/images/product1.jpg" alt="" />
                                         </button>
                                         <button id="btnImg" className="btn--textFile no-img" type="button">
-                                            <img id="main-imgPr" alt="" name="lecturer_name" src="http://localhost:4000/images/themanh.jpg"/>
-                                            <span id="textBtnImg">Thêm ảnh</span>  
+                                            <img id="main-imgPr" alt="" name="lecturer_name" src="http://localhost:4000/images/themanh.jpg" />
+                                            <span id="textBtnImg">Thêm ảnh</span>
                                         </button>
                                         <input id="course_img" type="file" name="lecturer_img" />
                                     </div>
                                     <div className="product__item-form">
                                         <label htmlFor="lecturer_name">Tên Giảng Viên</label>
-                                        <input defaultValue={Lecturer.lecturer_name} className="product__name-form" type="text" name="lecturer_name" placeholder="Nhập vào"/>
+                                        <input defaultValue={Lecturer.lecturer_name} className="product__name-form" type="text" name="lecturer_name" placeholder="Nhập vào" />
                                     </div>
-                                  
-                                    
+
+
                                     {
-            Lecturer.lecturer_certificate && Lecturer.lecturer_certificate.split(",").map((lec, index) => (
-                <div className="product__item-form" key={index}>
-                    <label htmlFor="lecturer_name">{`Thêm chứng chỉ ${index}`}</label>
-                 <input defaultValue={lec.trim()} className="product__name-form" type="text" name={`lecturer_certificate${index}`} placeholder="Nhập vào"/>
-            </div>
-            ))
-            }
+                                        Lecturer.lecturer_certificate && Lecturer.lecturer_certificate.split(",").map((lec, index) => (
+                                            <div className="product__item-form" key={index}>
+                                                <label htmlFor="lecturer_name">{`Thêm chứng chỉ ${index}`}</label>
+                                                <input defaultValue={lec.trim()} className="product__name-form" type="text" name={`lecturer_certificate${index}`} placeholder="Nhập vào" />
+                                            </div>
+                                        ))
+                                    }
 
 
                                     <div className="product__item-form">
@@ -117,7 +117,7 @@ export function LecturerUpdate() {
                         </div>
                     </div>
                 </div>
-        </div>
-       </form>
+            </div>
+        </form>
     );
 }
