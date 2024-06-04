@@ -47,6 +47,19 @@ server.delete('/deleteCourseDetails', (req, res) => {
   res.status(200).json({ message: `Deleted detailCourse with course_id ${courseId}` });
 });
 
+//xoa cai nay phai tu khai bao
+server.delete('/deteleUser', (req, res) => {
+  const userId = req.query.id; // Lấy course_id từ tham số query
+
+  const db = router.db;
+  const detailCourse = db.get('user');
+  
+  // Xóa các mục trong detailCourse có course_id bằng với userId
+  detailCourse.remove({ course_id: parseInt(userId) }).write();
+
+  res.status(200).json({ message: `Deleted detailCourse with course_id ${courseId}` });
+});
+
 server.get('/getCourseDetail', (req, res) => {
     // Lấy courseId từ params
 	//querry -> tham so sau ? login?course_id=3
@@ -111,6 +124,7 @@ server.post("/products",(req,res, next) => {
   // Continue to JSON Server router
   next()
 })
+
 
 
 
