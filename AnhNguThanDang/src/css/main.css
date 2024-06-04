@@ -1320,3 +1320,20 @@ li.pagination-item--active .pagination-item__link{
 .lectures__img {
     width: 100%;
 }
+
+.link-to {
+    text-decoration: none;
+}
+
+.th_user {
+    height: 40px;
+    line-height: 25px;
+    font-size: 1.6rem;    
+}
+
+.td_user {
+    min-height: 40px;
+    line-height: 20px;
+    font-size: 1.6rem;  
+    color: var(--text-color);
+}

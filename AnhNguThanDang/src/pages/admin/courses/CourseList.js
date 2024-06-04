@@ -203,11 +203,11 @@ export function CourseList() {
         details: detailCourses.filter(detailCourse => detailCourse.course_id === course.id)
     }));
 
-     joinedData.map(course => {
-      // In ra course_id của từng phần tử trong joinedDatas
-      console.log(course.details);
+  //    joinedData.map(course => {
+  //     // In ra course_id của từng phần tử trong joinedDatas
+  //     console.log(course);
       
-  });
+  // });
     // console.log(joinedData);
 
     return (
@@ -218,28 +218,7 @@ export function CourseList() {
 <div class="app__container">
     <div class="grid">
         <div class="grid__row app__contents_seller ">
-           
-            <div class="gird__column-2_seller">
-                <nav class="category">
-                    <ul class="category-list">
-                        <li class="category-item category-item--active">
-                            <a href="" class="category-item__link">Quản lý đơn hàng</a>
-                        </li>
-                        <li class="category-item">
-                            <a href="" class="category-item__link">Quản lý sản phẩm</a>
-                        </li>
-                        <li class="category-item">
-                            <a href="" class="category-item__link">Quản lý shop</a>
-                        </li>
-                        <li class="category-item">
-                            <a href="" class="category-item__link">Chăm sóc khách hàng</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-           
-
-            <div class="grid__column-10">
+            <div class="grid__column-12">
                 <div class="home-filter">
                     <span class="home-filter-title">Sắp xếp theo</span>
                    
@@ -282,35 +261,35 @@ export function CourseList() {
                                 </tr>
                             
                                 {joinedData.map(course => (
-                                <tr>
-                                  <td class="seller__td-img">
-                                        <div class="detail__product-info">
-                                        <img class="Course-img" src={"http://localhost:4000/images/" + course.course_img} />
-                                            <a href="" class="information__product-link">
-                                                <span class="seller-name_product">{course.course_name}</span>
-                                                <span class="seller-description_product">{course.course_description}</span>
-                                            </a>
-                                        </div>
-                                    </td>
-                                    <td>{course.course_price} $</td>
-                                    <td>{course.course_duration} Tháng</td> 
-                                    <td>
-                                         {course.details.map(detail => (
-                                        <div>
-                                          {detail.location}: {detail.day}  {detail.start} - {detail.end}
-                                         </div>
-                                         ))}
-                                    </td>
-                                
-                                    <td class="action__product">
-                                       
+                                  <tr>
+                                      <td class="seller__td-img">
+                                    <Link to={`/admin/courses/detail_admin/${course.id}`} className="link_to">
+                                          <div class="detail__product-info">
+                                          <img class="Course-img" src={"http://localhost:4000/images/" + course.course_img} />
+                                              <a href="" class="information__product-link">
+                                                  <span class="seller-name_product">{course.course_name}</span>
+                                                  <span class="seller-description_product">{course.course_description}</span>
+                                              </a>
+                                          </div>
+                                    </Link>
+                                      </td>
+                                      <td>{course.course_price} $</td>
+                                      <td>{course.course_duration} Tháng</td> 
+                                      <td>
+                                          {course.details.map(detail => (
+                                          <div>
+                                            {detail.location}: {detail.day}  {detail.start} - {detail.end}
+                                          </div>
+                                          ))}
+                                      </td>
+                                  
+                                      <td class="action__product">
                                           <Link  to={`/admin/courses/update/${course.id}`} class="seller__product-edit">Cập nhật</Link>
-                                        <a href="" class="seller__product-detail">Xem thêm</a> 
-                                       
-                                        
-                                     <button onClick={() => deleteCourse(course.id)} id="delete_Product" type="submit">Xóa</button> 
-                                    </td>
-                                </tr>                              
+                                          <Link to={`/admin/courses/detail_admin/${course.id}`} class="seller__product-detail">Xem thêm</Link> 
+                                      <button onClick={() => deleteCourse(course.id)} id="delete_Product" type="submit">Xóa</button> 
+                                      </td>
+                                  
+                                  </tr>                              
                                 ))}
                             </table>
                         </div>

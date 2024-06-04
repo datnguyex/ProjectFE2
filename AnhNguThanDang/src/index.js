@@ -14,11 +14,17 @@ import {Navbar} from './pages/auth/navbarCourse';
 import {NavbarHome} from './pages/auth/navbarHome';
 import Login from './pages/auth/login';
 import Register from './pages/auth/Register';
-import { CourseDetail } from './pages/admin/courses/Course';
 
+
+import { CourseDetail } from './pages/admin/courses/Course';
 import {ScoreAndReview} from "./pages/student/ScoreAndReview";
-import { Home } from "./pages/student/Home"
+
 import {StudenResult} from "./pages/student/StudentResult";
+import { CourseDetailAdmin } from './pages/admin/courses/CourseDetaiAdmin';
+import { UserList } from './pages/admin/users/UserList';
+import { UserCreate } from './pages/admin/users/CreateUser';
+import { UserUpdate } from './pages/admin/users/UpdateUser';
+import { Home } from './pages/student/Home';
 
 
 //to="/Home" no se di chuyen den route va route se tra lai 1 component-> dia chi web cung thay doi
@@ -71,18 +77,21 @@ function App() {
       <Routes>
       
       <Route path='/student/StudentResult' element={<StudenResult/>} /> 
-      <Route path='/student/Home' element={<Home/>} /> 
       <Route path='/student/ScoreAndReview' element={<ScoreAndReview/>} /> 
       <Route path='/auth/Register' element={<Register/>} /> 
       <Route path='/auth/login' element={ <Login/>} /> 
+      <Route path='/home' element={ <Home/>} /> 
       <Route path='/admin/courses' element={<CourseList />} /> 
       <Route path='/admin/courses/create' element={<CreateCourse />} />
       <Route path='/admin/courses/update/:id' element={<UpdateCourse />} />
       <Route path='/admin/courses/detail/:id' element={<CourseDetail />} />
+      <Route path='/admin/courses/detail_admin/:id' element={<CourseDetailAdmin />} />
+      <Route path='/admin/users' element={<UserList />} />
+      <Route path='/admin/user/create' element={<UserCreate />} />
+      <Route path='/admin/user/update/:id' element={<UserUpdate />} />
       <Route path='/admin/lecturers' element={<Listlecturers />} /> 
       <Route path='/admin/lecturers/create' element={<LecturerCreate />} />
       <Route path='/admin/lecturers/update/:id' element={<LecturerUpdate />} />
-      {/* <Route path='/home' element={<Home />} /> */}
       {/* <Route path='/admin/products/create' element={<CreateProduct />} /> */}
       {/*<Route path='/admin/products/edit/:id' element={<EditProduct />}/> */}
       </Routes>
@@ -98,7 +107,7 @@ function App() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-   
+    
     <App />
   </React.StrictMode>
 );

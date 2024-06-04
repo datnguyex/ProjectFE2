@@ -1,9 +1,25 @@
 .register__course {
-    background-color: var(--primary-color);
+    background-color: #5d6696;
     color: var(--white-color);
     border-radius: 10px;
     width: 100%;
     padding: 10px;
+}
+
+.register__body {
+    width: 100%;
+    margin-top: 100px;
+    background-color: #5d6696;
+    color: var(--white-color);
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+.text {
+    color: var(--primary-color) !important;
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 .register__course p {

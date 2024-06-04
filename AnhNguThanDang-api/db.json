@@ -227,43 +227,163 @@
   "user": [
     {
       "id": 1,
-      "name": "Nguyễn Minh Hiệp",
-      "email": "minhhiep325@gmail.com",
-      "phone": 485,
-      "id_course": "2",
-      "requirement": "Về nội dung khóa học"
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "phone": 1234567890,
+      "id_course": "1",
+      "requirement": "I'm interested in learning more about the course content and structure."
     },
     {
       "id": 2,
-      "name": "Nguyễn Thành Đạt",
-      "email": "nnguyendat72@gmail",
-      "phone": 918,
-      "id_course": "1",
-      "requirement": "Học phí của khóa học"
+      "name": "Jane Doe",
+      "email": "janedoe@example.com",
+      "phone": 9876543210,
+      "id_course": "2",
+      "requirement": "Can you provide information about the prerequisites for this course?"
     },
     {
-      "name": "thoai",
-      "email": "thoai@gmail.com",
-      "phone": "919281",
-      "id_course": "1",
-      "requirement": "Về nội dung khóa học",
-      "id": 3
-    },
-    {
-      "name": "Quoc",
-      "email": "quoc@gmail.com",
-      "phone": "1719271",
-      "id_course": "4",
-      "requirement": "Về Nội dung khóa học",
-      "id": 4
-    },
-    {
-      "name": "nam",
-      "email": "nam@gmail.com",
-      "phone": "918381",
+      "id": 3,
+      "name": "Peter Jones",
+      "email": "peterjones@example.com",
+      "phone": 123456789,
       "id_course": "3",
-      "requirement": "mmmzxcxzczczxczxcxzczcz",
-      "id": 5
+      "requirement": "I'd like to know about the instructor's experience and qualifications."
+    },
+    {
+      "id": 4,
+      "name": "Mary Smith",
+      "email": "marysmith@example.com",
+      "phone": 2345678901,
+      "id_course": "1",
+      "requirement": "Are there any scholarships or financial aid options available for this course?"
+    },
+    {
+      "id": 5,
+      "name": "David Williams",
+      "email": "davidwilliams@example.com",
+      "phone": 3456789012,
+      "id_course": "2",
+      "requirement": "What is the course schedule and format (online, in-person, etc.)?"
+    },
+    {
+      "id": 6,
+      "name": "Sarah Johnson",
+      "email": "sarahjohnson@example.com",
+      "phone": 4567890123,
+      "id_course": "3",
+      "requirement": "Can I see some sample course materials or assignments?"
+    },
+    {
+      "id": 7,
+      "name": "Michael Brown",
+      "email": "michaelbrown@example.com",
+      "phone": 5678901234,
+      "id_course": "1",
+      "requirement": "What are the job opportunities or career paths related to this course?"
+    },
+    {
+      "id": 8,
+      "name": "Elizabeth Taylor",
+      "email": "elizabethtaylor@example.com",
+      "phone": 6789012345,
+      "id_course": "2",
+      "requirement": "Are there any opportunities for hands-on learning or internships?"
+    },
+    {
+      "id": 9,
+      "name": "Robert Smith",
+      "email": "robertsmith@example.com",
+      "phone": 7890123456,
+      "id_course": "3",
+      "requirement": "What is the typical student profile or background for this course?"
+    },
+    {
+      "id": 10,
+      "name": "Jennifer Jones",
+      "email": "jenniferjones@example.com",
+      "phone": 8901234567,
+      "id_course": "1",
+      "requirement": "I'm interested in learning about the language requirements for this course."
+    },
+    {
+      "id": 11,
+      "name": "Mark Williams",
+      "email": "markwilliams@example.com",
+      "phone": 9012345678,
+      "id_course": "2",
+      "requirement": "Can you provide more information about the assessment and grading system?"
+    },
+    {
+      "id": 12,
+      "name": "Linda Brown",
+      "email": "lindabrown@example.com",
+      "phone": 1012345678,
+      "id_course": "1",
+      "requirement": "What are the attendance policies for this course?"
+    },
+    {
+      "id": 13,
+      "name": "Charles Miller",
+      "email": "charlesmiller@example.com",
+      "phone": 1112345678,
+      "id_course": "3",
+      "requirement": "Is there any certificate or diploma awarded upon completing the course?"
+    },
+    {
+      "id": 14,
+      "name": "Susan Garcia",
+      "email": "susangarcia@example.com",
+      "phone": 1212345678,
+      "id_course": "2",
+      "requirement": "Do you offer any payment plans or financing options for the course fee?"
+    },
+    {
+      "id": 15,
+      "name": "Daniel Robinson",
+      "email": "danielrobinson@example.com",
+      "phone": 1312345678,
+      "id_course": "1",
+      "requirement": "What is the duration of the course (weeks, months, etc.)?"
+    },
+    {
+      "id": 16,
+      "name": "Margaret Wilson",
+      "email": "margaretwilson@example.com",
+      "phone": 1412345678,
+      "id_course": "2",
+      "requirement": "Are there any prerequisites or required knowledge for this course?"
+    },
+    {
+      "id": 17,
+      "name": "Kenneth Thomas",
+      "email": "kenneththomas@example.com",
+      "phone": 1512345678,
+      "id_course": "3",
+      "requirement": "What are the class sizes typically like for this course?"
+    },
+    {
+      "id": 18,
+      "name": "Evelyn Johnson",
+      "email": "evelynjohnson@example.com",
+      "phone": 1612345678,
+      "id_course": "1",
+      "requirement": "Is there any opportunity to take makeup exams or assignments?"
+    },
+    {
+      "id": 19,
+      "name": "Christopher Garcia",
+      "email": "christophergarcia@example.com",
+      "phone": 1712345678,
+      "id_course": "2",
+      "requirement": "What kind of support services do you offer to students enrolled in the course?"
+    },
+    {
+      "id": 20,
+      "name": "Ashley Hernandez",
+      "email": "ashleyhernandez@example.com",
+      "phone": 1812345678,
+      "id_course": "3",
+      "requirement": "Once I complete the course, will I be qualified to work in a specific industry?"
     }
   ],
   "HistorySearch": [
