@@ -18,6 +18,12 @@
     width: 100%;
     height: 150px;
   }
+  .cousetDes{
+    height: 97px;
+  }
+  .cousetTitle {
+    height: 42px;
+  }
   .durationFee {
     display: flex;
     .fee {
@@ -50,16 +56,31 @@
     border-radius: 5px;
     .groupInput {
         display: flex;
-        margin-top: 200px;
+        margin-top: 180px;
         width: 100%;
     }
-    #ThemAnhImg {
-        width: 150px;
-        height: 150px;
+    #ThemAnhImg1 {
+        width: 90px;
+        height: 90px;   
+    }
+    #ThemAnhImg2{
+        width: 90px;
+        height: 90px;   
     }
     .btnScore {
-        margin-right: 100px;
+      margin-right: 70px;
+      float: right; 
+      width: 100px;
+      height: 100px;   
+      background-color: white;
     }
+    .btnScore2 {
+        width: 100px;
+        height: 100px;   
+        background-color: white;
+        float: left;
+        margin-left: 68px;    
+      }
     #exampleInput {
         width: 90%;
         margin-left: 30px;
@@ -82,14 +103,33 @@
     }
     .fileScore {
         position: absolute;
-        width: 170px;
-        height: 150px;
+        width: 100px;
+        height: 100px;   
         background-color: red;
-        margin-left: 110px;
-        margin-top: 20px;
+        margin-top: 30px;
         opacity: 0;
     }
-    #review_courseId {
-        display: none;
+    .fileScore2 {
+        position: absolute;
+        width: 100px;
+        height: 100px;   
+        background-color: red;
+        margin-top: 30px;
+        margin-left: 68px;
+        opacity: 0;
+    }
+    .imgStudent1 {
+        position: absolute;
+        top: 425px;
+        left: 940px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .imgStudent2 {
+        position: absolute;
+        top: 425px;
+        left: 1075px;
+        font-size: 12px;
+        font-weight: bold;
     }
 }

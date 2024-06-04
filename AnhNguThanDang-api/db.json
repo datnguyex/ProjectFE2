@@ -242,27 +242,27 @@
       "requirement": "Học phí của khóa học"
     },
     {
-      "name": "Nhan",
-      "email": "nhan@gmail.com",
-      "phone": "123",
-      "id_course": "4",
-      "requirement": "asdasda",
-      "id": 3
-    },
-	 {
-      "name": "Nhan",
-      "email": "nhan@gmail.com",
-      "phone": "123",
-      "id_course": "3",
-      "requirement": "Về nội dung khóa học",
-      "id": 4
-    },
-    {
       "name": "thoai",
       "email": "thoai@gmail.com",
       "phone": "919281",
       "id_course": "1",
       "requirement": "Về nội dung khóa học",
+      "id": 3
+    },
+    {
+      "name": "Quoc",
+      "email": "quoc@gmail.com",
+      "phone": "1719271",
+      "id_course": "4",
+      "requirement": "Về Nội dung khóa học",
+      "id": 4
+    },
+    {
+      "name": "nam",
+      "email": "nam@gmail.com",
+      "phone": "918381",
+      "id_course": "3",
+      "requirement": "mmmzxcxzczczxczxcxzczcz",
       "id": 5
     }
   ],
@@ -288,44 +288,58 @@
     {
       "id": 1,
       "review_img": "bangdiemtoiec.jpg",
-      "review_studenEmail": "nguyencongphuong@gmail.com",
+      "review_studentImg": "tom.jpg",
+      "review_studentEmail": "nguyencongphuong@gmail.com",
       "studentReview": "Khóa học rất chất lượng, tôi đã có thể giao tiếp thành thạo tiếng anh",
       "score": "187"
     },
     {
       "id": 2,
       "review_img": "bangdiemtoiec.jpg",
-      "review_studenEmail": "nguyencongphuong@gmail.com",
+      "review_studentImg": "arthur.jpg",
+      "review_studentEmail": "nguyencongphuong@gmail.com",
       "studentReview": "Khóa học rất chất lượng, tôi đã có thể giao tiếp thành thạo tiếng anh",
       "score": "187"
     },
     {
+      "id": 3,
       "review_img": "bangdiemtoiec.jpg",
+      "review_studentImg": "tom.jpg",
       "review_studentEmail": "minhhiep325@gmail.com",
-      "score": "20",
-      "studentReview": "Tôi đã tự tin hơn trong việc giao tiếp bằng tiếng anh",
-      "id": 3
+      "score": "590",
+      "studentReview": "Tôi đã tự tin hơn trong việc giao tiếp bằng tiếng anh"
     },
     {
+      "id": 4,
       "review_img": "bangdiemtoiec.jpg",
+      "review_studentImg": "arthur.jpg",
       "review_studentEmail": "nnguyendat72@gmail",
-      "score": "20",
-      "studentReview": "Tôi đã có thể giao tiếp bằng tiếng anh",
-      "id": 3
+      "score": "450",
+      "studentReview": "Tôi đã có thể giao tiếp bằng tiếng anh"
     },
     {
+      "id": 5,
       "review_img": "bangdiemtoiec.jpg",
-      "review_studentEmail": "nhan@gmail.com",
-      "score": "30",
-      "studentReview": "Thật khó để tìm ra một trung tâm chất lượng như này",
-      "id": 4
-    },
-    {
-      "review_img": "bangdiemtoiec.jpg",
+      "review_studentImg": "tom.jpg",
       "review_studentEmail": "thoai@gmail.com",
       "score": "700",
-      "studentReview": "Thầy cô giảng bài rất chi tiết và dễ hiểu",
-      "id": 5
+      "studentReview": "Thầy cô giảng bài rất chi tiết và dễ hiểu"
+    },
+    {
+      "review_studentImg": "1717485727057-7.jpg",
+      "review_img": "1717485727060-1717485130992-bangdiemtoiec.jpg",
+      "review_studentEmail": "quoc@gmail.com",
+      "score": "500",
+      "studentReview": "quasjdbjasjdbaskdjasdsadasdsadsadaszxczxcz",
+      "id": 6
+    },
+    {
+      "review_studentImg": "1717486188235-8.jpg",
+      "review_img": "1717486188241-product5.jpg",
+      "review_studentEmail": "nam@gmail.com",
+      "score": "950",
+      "studentReview": "sadjsadkjsadkasjd",
+      "id": 7
     }
   ]
 }

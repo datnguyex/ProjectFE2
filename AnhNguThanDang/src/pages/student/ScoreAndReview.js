@@ -72,8 +72,8 @@ export function ScoreAndReview(){
                            <div  class="card" >
   <img  src={"http://localhost:4000/images/" + course.course_img} class="card-img card-img-top" alt="..."/>
   <div class="card-body">
-    <h3 class="card-title">{course.course_name}</h3>
-    <p class="card-text">{course.course_description}</p>
+    <h3 class="card-title cousetTitle">{course.course_name}</h3>
+    <p class="card-text cousetDes">{course.course_description}</p>
      <div class="durationFee">
         <p class="duration">{course.course_duration} Tuần</p>
         <p class="fee">{course.course_price} $</p>
@@ -88,13 +88,25 @@ export function ScoreAndReview(){
                 <h1>Phiếu Đánh Giá</h1>
             <div>
             <button className="btnScore">
+            <i className="fa-solid fa-x"></i>
+            <img id="ThemAnhImg1" src="http://localhost:4000/images/themanh.jpg" alt=""/>
+            </button>
+            </div>
+            <div>
+            <input name="review_studentImg" type="file" class="fileScore2"></input>
+            <label class="imgStudent1">Ảnh Học viên</label>  
+
+
+            <button className="btnScore2">
              <div className="">
             <i className="fa-solid fa-x"></i>
             </div>
-            <img id="ThemAnhImg" src="http://localhost:4000/images/themanh.jpg" alt=""/>
+            <img id="ThemAnhImg2" src="http://localhost:4000/images/themanh.jpg" alt=""/>
             </button>
             </div>
             <input name="review_img" type="file" class="fileScore"></input>
+            <label class="imgStudent2">Ảnh Điểm Thi</label>        
+            
              <div class="groupInput">
         <div class="mb-3">
             <input name="review_studentEmail" type="text" class="form-control" id="exampleInput" placeholder="Email Học Viên"/>

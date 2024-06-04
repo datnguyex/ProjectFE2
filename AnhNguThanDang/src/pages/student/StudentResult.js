@@ -76,7 +76,7 @@ export function StudenResult() {
                               <div className="row">
                                   <div className="col-md-6">
                                       <div id="cardItem" className="card">
-                                          <img src={"http://localhost:4000/images/product1.jpg"} className="card-img-top" alt="..." />
+                                          <img id="imgstudent" src={"http://localhost:4000/images/"+review.review_studentImg} className="card-img-top" alt="..." />
                                           <div className="card-body">
                                               <h2 className="card-title">{review.user.name}</h2>
                                               <p className="card-text">{review.studentReview}</p>
@@ -87,7 +87,6 @@ export function StudenResult() {
                                   <div className="col-md-6">
                                       <div id="cardItem2" className="a">
                                           <img src={"http://localhost:4000/images/" + review.review_img} className="cardImg" alt="..." />
-
                                       </div>
                                   </div>
                               </div>

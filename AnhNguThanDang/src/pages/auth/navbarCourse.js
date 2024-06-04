@@ -8,7 +8,7 @@ import "../../css/product_detail.css"
     import { useEffect, useState } from "react";
     import { Form, Link, useNavigate, useParams } from "react-router-dom";
 
-    export function Navbar({onSubmit }) {   
+    export function Navbar({onSubmit,getHistorySearch}) {   
 
         const [historySearch, setHistorySearch] = useState([]);
 
@@ -45,7 +45,9 @@ import "../../css/product_detail.css"
             
         }
         
-        useEffect(getHistorySearch,[]);
+        useEffect(() => {
+            getHistorySearch();  //moi vo no chay cai nay
+          }, [getHistorySearch]);  // khi duoc render lai no se chay lai cai nay
         const liClick = document.querySelector("#header__search-history-item");
         const inputDisplay = document.querySelector("#header__search-input");
         const btnClick = document.querySelector("#history-item-link");
@@ -196,7 +198,7 @@ import "../../css/product_detail.css"
                                     <ul class="header__search-history-list">
                                         {
                                             historySearch.map(search => (
-                                        <li  onClick={() => handleChangeDefaultValue(search.search_name)} id="header__search-history-item"  class="header__search-history-item">
+                                        <li onClick={() => handleChangeDefaultValue(search.search_name)} id="header__search-history-item"  class="header__search-history-item">
                                              <i onClick={() => deleteSearchHistory(search.id)} id="bi-x" class="bi bi-x"></i>
                                          <button type="submit" id="history-item-link" className="history-item-link">
                                             {search.search_name}
