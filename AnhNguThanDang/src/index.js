@@ -20,7 +20,6 @@ import { CourseDetail } from './pages/admin/courses/Course';
 import {ScoreAndReview} from "./pages/student/ScoreAndReview";
 
 import {StudenResult} from "./pages/student/StudentResult";
-import Home from './pages/home';
 import { CourseDetailAdmin } from './pages/admin/courses/CourseDetaiAdmin';
 import { UserList } from './pages/admin/users/UserList';
 import { UserCreate } from './pages/admin/users/CreateUser';
@@ -77,7 +76,6 @@ function App() {
       <Routes>
       
       <Route path='/student/StudentResult' element={<StudenResult/>} /> 
-      <Route path='/home' element={<Home/>} /> 
       <Route path='/student/ScoreAndReview' element={<ScoreAndReview/>} /> 
       <Route path='/auth/Register' element={<Register/>} /> 
       <Route path='/auth/login' element={ <Login/>} /> 
