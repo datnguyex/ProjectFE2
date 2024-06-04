@@ -1,5 +1,6 @@
 import "../../../src/css/base.css"
 import "../../../src/css/main.css"
+import "../../../src/css/register.scss"
 import { useEffect, useState } from "react";
 import { Form, Link, useNavigate, useParams } from "react-router-dom";
 export default function Register() {
@@ -35,7 +36,7 @@ export default function Register() {
                <div class="auth-form__container">
                     <div class="auth-form__header">
                         <h3 class="auth-form__heading">Đăng ký</h3>
-                        <a href="" class="auth-form__switch-btn">Đăng nhập</a>
+                        <Link to={'/auth/Login'} class="auth-form__switch-btn">Đăng nhập</Link>
                     </div>
                   
                     <div class="auth-form__form">
@@ -71,13 +72,13 @@ export default function Register() {
                 </div>
 
          
-                <div class="auth-form__socials">
-                    <a href="" class="btn btn__size-s btn--with-icon btn__icon-fb">
+                <div id="auth-form__socials" class="auth-form__socials">
+                    <a id="btn__icon-facebook" href="" class="btn btn__size-s btn--with-icon btn__icon-fb">
                         <i class="auth-form__socials-icon fa-brands fa-square-facebook"></i>
                         <span>Kết nối với Facebook</span>
 
                     </a>
-                    <a href="{{route('login-by-google')}}" class="btn btn__size-s btn--with-icon btn__icon-google">
+                    <a id="btn__icon-google" href="" class="btn btn__size-s btn--with-icon btn__icon-google">
                         <i class="auth-form__socials-icon fa-brands fa-google"></i>
                         <span>Kết nối với Google</span>
                     </a>

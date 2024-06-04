@@ -96,6 +96,14 @@
       "course_duration": 3,
       "course_img": "toiec4KyNang.jpg",
       "createdAt": "2024-05-24"
+    },
+    {
+      "course_name": "",
+      "course_price": "",
+      "course_duration": "",
+      "course_description": " ",
+      "createdAt": "2024-06-04T18:11:17.208Z",
+      "id": 5
     }
   ],
   "detailCourse": [
@@ -162,6 +170,22 @@
       "day": "Thứ 3, Thứ 4,Thứ 7",
       "start": "6h",
       "end": "7h30"
+    },
+    {
+      "location": "Thủ Đức",
+      "start": "",
+      "end": "",
+      "day": ",,",
+      "course_id": 5,
+      "id": 9
+    },
+    {
+      "location": "Bình Thạnh",
+      "start": "",
+      "end": "",
+      "day": ",,",
+      "course_id": 5,
+      "id": 10
     }
   ],
   "locationCourse": [

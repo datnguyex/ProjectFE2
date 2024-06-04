@@ -64,12 +64,16 @@ import {StudenResult} from "./pages/student/StudentResult";
 // TRACE: Gửi một yêu cầu lặp lại cho máy chủ, giúp xác định vấn đề nếu có trong quá trình truyền tải.
 
 // PATCH: Sử dụng để gửi các thay đổi cho tài nguyên đã tồn tại với dữ liệu chỉ mô tả các thay đổi cần áp dụng.
+
+//gui form 
+//event
+//server
+
 function App() {
   return (  
     <div>
      <BrowserRouter>
       <Routes>
-      
       <Route path='/student/StudentResult' element={<StudenResult/>} /> 
       <Route path='/student/Home' element={<Home/>} /> 
       <Route path='/student/ScoreAndReview' element={<ScoreAndReview/>} /> 

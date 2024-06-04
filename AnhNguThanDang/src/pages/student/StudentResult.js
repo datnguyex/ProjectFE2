@@ -52,10 +52,12 @@ export function StudenResult() {
         const usersInCourse = user.filter(u => parseInt(u.id_course) === course.id);
         return {
             ...course,
-            users: usersInCourse, // cai nay de lien ket voi bang course theo cau truc 1 3 3 
+            users: usersInCourse, // cai nay de lien ket voi bang course theo cau truc 1 3 3. 
+            // 1 cha 2 con 
             reviews: scoreAndReview
                 .filter(review => usersInCourse.some(user => user.email === review.review_studentEmail))
                 //tim kiem coi co review ben trong user khong
+                //cha con chau
                 .map(review => ({
                     ...review,
                     user: usersInCourse.find(user => user.email === review.review_studentEmail)

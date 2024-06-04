@@ -30,7 +30,7 @@ export default function Login() {
           <div class="modal">
              <div class="modal__overlay"></div>
              <div class="modal__body">
-                 <div class="auth-form__container">
+                 <div id="auth-form__container" class="auth-form__container">
                      <div class="auth-form__header">
                          <h3 class="auth-form__heading">Đăng nhập</h3>
                          <Link to={'/auth/Register'} class="auth-form__switch-btn">Đăng ký</Link>
@@ -94,8 +94,8 @@ export default function Login() {
                              <button type="submit" class="btn btn--primary">ĐĂNG NHẬP</button>
                          </div>
                      </div>
-                     <div class="auth-form__socials">
-                         <a href="" class="btn btn__size-s btn--with-icon btn__icon-fb">
+                     <div id="auth-form__socials" class="auth-form__socials">
+                         <a id="btn__icon-fb" href="" class="btn btn__size-s btn--with-icon btn__icon-fb">
                              <i class="auth-form__socials-icon fa-brands fa-square-facebook"></i>
                              <span>Kết nối với Facebook</span>
                          </a>
