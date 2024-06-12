@@ -356,6 +356,7 @@
 #main_img_Advertisement{
     width: 100%;
     height: 100%;
+    max-height: 510px;
 }
 .item_img_Advertisement{
     width: 100%;
@@ -1335,4 +1336,82 @@ li.pagination-item--active .pagination-item__link{
     line-height: 20px;
     font-size: 1.6rem;  
     color: var(--text-color);
+}
+
+
+.mainMallAdversiment{
+    /* padding: 10px; */
+    background-color: white;
+}
+.itemMallImg, .itemMallImg1, .itemMallImg2{
+    width: 400px;
+    height: 430px;
+}
+#mainMallImg, #mainMallImg1, #mainMallImg2{
+    width: 400px;
+    height: 430px;
+}
+
+.menuMallSelectionBackShoppe{
+    display: flex;
+    overflow-x: scroll;
+    height: 450px;
+    width: 400px;
+}
+.selectionMallMenu{
+    position: relative;
+    padding: 10px;
+    background-color: white;
+    height: 450px;
+}
+.menuMallSelectionBackShoppe::-webkit-scrollbar{
+    display: none;
+}
+
+.ulItemMallMenu{
+    display: flex;
+    width: 800px;
+    height: 450px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: white;
+    
+}
+.title {
+    color: red;
+}
+#btnAddProject{
+    margin-left: 15px;
+}
+#btnAddProject a {
+    text-decoration: none;
+    color: black;
+}
+.custom-button {
+    float: right;
+    border-radius: 25px;
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 13px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+
+.link_to {
+    text-decoration: none !important;
 }

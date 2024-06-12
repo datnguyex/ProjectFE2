@@ -85,7 +85,7 @@
       "course_description": "Improve your business English skills for the workplace.",
       "course_price": 900,
       "course_duration": 4,
-      "course_img": "EnglishConversationPractice.jpg",
+      "course_img": "toiec4KyNang.jpg",
       "createdAt": "2024-05-23"
     },
     {
@@ -98,12 +98,40 @@
       "createdAt": "2024-05-24"
     },
     {
-      "course_name": "",
-      "course_price": "",
-      "course_duration": "",
-      "course_description": " ",
-      "createdAt": "2024-06-04T19:33:36.680Z",
-      "id": 5
+      "id": 6,
+      "course_name": "Business Chinese",
+      "course_description": "Improve your business English skills for the workplace.",
+      "course_price": 900,
+      "course_duration": 4,
+      "course_img": "toiec4KyNang.jpg",
+      "createdAt": "2024-05-23"
+    },
+    {
+      "id": 7,
+      "course_name": "TOEFL Quickly Course",
+      "course_description": "Get ready for the TOEFL exam with in-depth lessons and practice exercises.",
+      "course_price": 1100,
+      "course_duration": 5,
+      "course_img": "IELTSPreparationCourse.jpg",
+      "createdAt": "2024-05-22"
+    },
+    {
+      "id": 8,
+      "course_name": "Business Janpanes Course",
+      "course_description": "Whether it's a first brush on canvas or the last frame in an animation, Skillshare is here to support you on every step of your creative journey.",
+      "course_price": "1200",
+      "course_duration": "6",
+      "course_img": "1717088179273-1716385756919-1716217983899-product1.jpg",
+      "createdAt": "2024-05-21"
+    },
+    {
+      "id": 9,
+      "course_name": "TOEFL Germagy Course",
+      "course_description": "Get ready for the TOEFL exam with in-depth lessons and practice exercises.",
+      "course_price": 1100,
+      "course_duration": 5,
+      "course_img": "IELTSPreparationCourse.jpg",
+      "createdAt": "2024-05-22"
     }
   ],
   "detailCourse": [
@@ -170,22 +198,6 @@
       "day": "Thứ 3, Thứ 4,Thứ 7",
       "start": "6h",
       "end": "7h30"
-    },
-    {
-      "location": "Thủ Đức",
-      "start": "",
-      "end": "",
-      "day": ",,",
-      "course_id": 5,
-      "id": 9
-    },
-    {
-      "location": "Bình Thạnh",
-      "start": "",
-      "end": "",
-      "day": ",,",
-      "course_id": 5,
-      "id": 10
     }
   ],
   "locationCourse": [
@@ -230,6 +242,18 @@
       "email": "nhan@gmail.com",
       "password": 123,
       "id": 5
+    },
+    {
+      "name": "",
+      "email": "ga@gmail.com",
+      "password": 123,
+      "id": 6
+    },
+    {
+      "name": "binh",
+      "email": "binh@gmail.com",
+      "password": 123,
+      "id": 7
     }
   ],
   "lecturers": [
@@ -251,7 +275,7 @@
   "user": [
     {
       "id": 1,
-      "name": "John Doe",
+      "name": "John Doe lol",
       "email": "johndoe@example.com",
       "phone": "1234567890",
       "id_course": "1",
@@ -400,6 +424,30 @@
       "id_course": "3",
       "requirement": "ẻ6435w634twgwrgr",
       "id": 19
+    },
+    {
+      "name": "John Doe loọ",
+      "email": "johndoe@example.com",
+      "phone": "1234567890",
+      "id_course": "7",
+      "requirement": "ugvtfbnjklmnbvfthbjhnbhgcvdfvbhjnbvcfvuhbghbjvgfvbbhmng\r\n\\\r\n",
+      "id": 20
+    },
+    {
+      "name": "Minhxss",
+      "email": "minhhiep325@gmail.com",
+      "phone": "7657455477",
+      "id_course": "7",
+      "requirement": "bdryreyeryefhrthntrnrth",
+      "id": 21
+    },
+    {
+      "name": "quan",
+      "email": "quan@gmail.com",
+      "phone": "0192111",
+      "id_course": "1",
+      "requirement": "aaaaaaa",
+      "id": 22
     }
   ],
   "HistorySearch": [
@@ -418,6 +466,110 @@
     {
       "id": 4,
       "search_name": "ielts"
+    },
+    {
+      "search_name": "",
+      "id": 5
+    },
+    {
+      "search_name": "",
+      "id": 6
+    },
+    {
+      "search_name": "",
+      "id": 7
+    },
+    {
+      "search_name": "",
+      "id": 8
+    },
+    {
+      "search_name": "",
+      "id": 9
+    },
+    {
+      "search_name": "",
+      "id": 10
+    },
+    {
+      "search_name": "",
+      "id": 11
+    },
+    {
+      "search_name": "dfgdfg",
+      "id": 12
+    },
+    {
+      "search_name": "dfgdfg",
+      "id": 13
+    },
+    {
+      "search_name": "dfgdfg",
+      "id": 14
+    },
+    {
+      "search_name": "dfgdfg",
+      "id": 15
+    },
+    {
+      "search_name": "dfgdfg",
+      "id": 16
+    },
+    {
+      "search_name": "teic",
+      "id": 17
+    },
+    {
+      "search_name": "teic",
+      "id": 18
+    },
+    {
+      "search_name": "teic",
+      "id": 19
+    },
+    {
+      "search_name": "teic",
+      "id": 20
+    },
+    {
+      "search_name": "teic",
+      "id": 21
+    },
+    {
+      "search_name": "TOEIC",
+      "id": 22
+    },
+    {
+      "search_name": "TOEIC",
+      "id": 23
+    },
+    {
+      "search_name": "TOEIC",
+      "id": 24
+    },
+    {
+      "search_name": "TOEIC",
+      "id": 25
+    },
+    {
+      "search_name": "TOEIC",
+      "id": 26
+    },
+    {
+      "search_name": "TOEIC",
+      "id": 27
+    },
+    {
+      "search_name": "Bussiness",
+      "id": 28
+    },
+    {
+      "search_name": "english",
+      "id": 32
+    },
+    {
+      "search_name": "english",
+      "id": 35
     }
   ],
   "ScoreAndReview": [
@@ -476,6 +628,30 @@
       "score": "950",
       "studentReview": "sadjsadkjsadkasjd",
       "id": 7
+    },
+    {
+      "review_studentImg": "1717572693219-5-2.jpg",
+      "review_img": "1717572693220-1716480540250-product6.jpg",
+      "review_studentEmail": "hung@gmail.com",
+      "score": "500",
+      "studentReview": "0192918sdfdsfdsfs",
+      "id": 8
+    },
+    {
+      "review_studentImg": "1717576693349-5-2.jpg",
+      "review_img": "1717576693351-1717152112054-arthur.jpg",
+      "review_studentEmail": "quan@gmail.com",
+      "score": "30",
+      "studentReview": "ádsadasdasaaaaaa",
+      "id": 9
+    },
+    {
+      "review_studentImg": "1717580616388-1717160193065-arthur.jpg",
+      "review_img": "1717580616388-1717485727060-1717485130992-bangdiemtoiec.jpg",
+      "review_studentEmail": "quan@gmail.com",
+      "score": "700",
+      "studentReview": "khoa hoc rat tot",
+      "id": 10
     }
   ]
 }

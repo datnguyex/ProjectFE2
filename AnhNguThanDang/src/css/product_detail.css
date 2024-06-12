@@ -189,7 +189,7 @@
   color: var(--outline-color);
   padding: 10px;
   position: sticky;
-  top: var(--height-header);
+  /* top: var(--height-header); */
   z-index: 1;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }/*# sourceMappingURL=product_detail.css.map */

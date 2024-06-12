@@ -9,7 +9,7 @@ import "../../../css/product.css"
 import "../../../css/product_detail.css"
 import "../../../css/listLecturer.scss"
 import { useEffect, useState } from "react";
-import {getLecturers,deleteLecturer} from "../../../components/lecturers/CpnLecturers";
+import { getLecturers, deleteLecturer } from "../../../components/lecturers/CpnLecturers";
 import { Navbar } from "../../auth/navbarCourse";
 import ReactPaginate from 'react-paginate';
 import axios from 'axios';
@@ -51,9 +51,9 @@ export function UserList() {
                 return reponse.json();
             })
             .then(data => {
-                console.log(data);
+                const sortedCourses = data.sort((a, b) => a.id - b.id);
                 setTotalPage(data.length)
-                setUser(data);
+                setUser(sortedCourses);
             });
     }
     //hook nay goi phuong thuc get lay ra course va detail course 
@@ -63,10 +63,14 @@ export function UserList() {
             .then(response => {
                 setReview(response.data);
             })
-        axios.get('http://localhost:4000/user')
+        axios.get('http://localhost:4000/user?sort')
             .then(response => {
                 setTotalUser(response.data.length);
                 getUser(1, 2); // Trang đầu, hiển thị 10 người dùng
+            })
+        axios.get('http://localhost:4000/Courses')
+            .then(response => {
+                setCourses(response.data);
             })
     }, []);
 
@@ -96,6 +100,13 @@ export function UserList() {
 
     }
 
+    const joinedDatas = users.map(user => ({
+        ...user,//chuyen doi gia tri -> giong ajax
+        details: courses.filter(course => parseInt(course.id) === parseInt(user.id_course))
+    }));
+
+    console.log(joinedDatas);
+
     return (
         <div>
             <Navbar onSubmit={HandleSubmit} />
@@ -123,9 +134,8 @@ export function UserList() {
 
                                         <div class="grid__column-product">
                                             <table id="customers">
-                                                
+
                                                 <tr>
-                                                    <th className='th_user' scope="col">id</th>
                                                     <th className='th_user' scope="col">Họ và tên</th>
                                                     <th className='th_user' scope="col">email</th>
                                                     <th className='th_user' scope="col">sđt</th>
@@ -135,13 +145,14 @@ export function UserList() {
                                                 </tr>
 
                                                 <tbody class="table-group-divider">
-                                                    {userData.map(user => (
+                                                    {joinedDatas.map(user => (
                                                         <tr>
-                                                            <th className='td_user' >{user.id}</th>
                                                             <td className='td_user'> {user.name}</td>
                                                             <td className='td_user'> {user.email}</td>
                                                             <td className='td_user'> {user.phone}</td>
-                                                            <td className='td_user'> {user.id_course}</td>
+                                                            {user.details.map(course => 
+                                                                <td className='td_user'>{course.course_name}</td>
+                                                            )}
                                                             <td className='td_user'> {user.requirement}</td>
                                                             <td className='td_user'>
                                                                 <div>

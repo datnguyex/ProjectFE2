@@ -158,7 +158,7 @@ useEffect(getCourses,[]);
                                    {
                                      courses.map(course => (
                                         <li class="navbar-user-item">
-                                        <a href="" class="see-core navbar-user-link">{course.course_name}</a>
+                                        <Link to={`/admin/courses/detail/${course.id}`} class="see-core navbar-user-link">{course.course_name}</Link>
                                          </li>  
                                      ))
                                    }

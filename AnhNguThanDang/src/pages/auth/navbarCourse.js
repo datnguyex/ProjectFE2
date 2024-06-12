@@ -48,6 +48,7 @@ export function Navbar({ onSubmit, getHistorySearch }) {
     useEffect(() => {
         getHistorySearch();  //moi vo no chay cai nay
     }, [getHistorySearch]);  // khi duoc render lai no se chay lai cai nay
+    
     const liClick = document.querySelector("#header__search-history-item");
     const inputDisplay = document.querySelector("#header__search-input");
     const btnClick = document.querySelector("#history-item-link");

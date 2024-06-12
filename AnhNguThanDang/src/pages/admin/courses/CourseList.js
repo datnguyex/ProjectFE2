@@ -154,7 +154,7 @@ export function CourseList() {
         .then(response => {
           if(response.ok) {
             return response.json();
-          }
+          } 
         })
         .then(data => {
           if(data) {
@@ -264,7 +264,7 @@ export function CourseList() {
                                 {joinedData.map(course => (
                                   <tr>
                                       <td class="seller__td-img">
-                                    <Link to={`/admin/courses/detail_admin/${course.id}`} className="link_to">
+                                    <Link to={`/admin/courses/detail_admin/${course.id}`}  className="link_to">
                                           <div class="detail__product-info">
                                           <img class="Course-img" src={"http://localhost:4000/images/" + course.course_img} />
                                               <a href="" class="information__product-link">
